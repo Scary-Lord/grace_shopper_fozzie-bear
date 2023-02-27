@@ -14,6 +14,15 @@ export const fetchUsersAsync = createAsyncThunk("allUsers", async () => {
     }
 });
 
+export const fetchUserByID = (id) => async (dispatch) => {
+  try {
+    const { data } = await axios.get(`/api/users/${id}`);
+    return data;
+  } catch (error) {
+    dispatch(fetchUserFailure(error.message));
+  }
+};
+
 const usersSlice = createSlice({
     name: "users",
     initialState,
@@ -22,6 +31,9 @@ const usersSlice = createSlice({
         builder.addCase(fetchUsersAsync.fulfilled, (state, action) => {
             // Add user to the state array
             return action.payload;
+        });
+        builder.addCase(fetchUserByID.fulfilled, (state, action) => {
+          return action.payload;
         });
     },
 });

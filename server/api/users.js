@@ -24,4 +24,26 @@ router.get('/:userId', async (req, res, next) => {
     }
 })
 
+// Post to add user /api/users/addUser
+router.post("/user/addUser", async (req,res,next)=>{
+    try{
+        res.status(201).send(await Users.create(req.body));
+    } catch (error) {
+        next(error);
+    }
+
+})
+
+// post to add cart to user /api/users/addCart
+router.put("/user/:cart", async (req, res, next) => {
+    try {
+        const user = await Users.findByPk(req.params.userId)
+        const cart = await Cart.findByPk(req.params.cartId)
+        await user.addCart(cart)
+        res.json(user)
+    } catch (error) {
+        next(error)
+    }
+})
+
 module.exports = router;
