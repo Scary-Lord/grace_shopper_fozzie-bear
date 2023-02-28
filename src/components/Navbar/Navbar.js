@@ -27,9 +27,12 @@ const Navbar = () => {
       ):null}
       
     </li>
-    <li className='navitems'><Link to={'/'}>Home</Link> </li>
-    <li className='navitems'><Link to={'/'}> Log in </Link>/<Link to={'/user/addUser'}> Sign Up </Link></li>
-    <li className='navitems'><Link to={'/user/:cart'}><img src={"https://cdn-icons-png.flaticon.com/512/5465/5465858.png"} alt="cart"></img></Link></li>
+    <li className='navitems'><Link className='Anchors' to={'/'}>Home</Link> </li>
+    <li className='navitems'>
+      <Link className='Anchors' to={'/'}> Log in </Link>/
+      <Link className='Anchors' to={'/user/addUser'}> Sign Up </Link>
+    </li>
+    <li className='navitems'><Link className='Anchors' to={'/user/:cart'}><img src={"https://cdn-icons-png.flaticon.com/512/5465/5465858.png"} alt="cart"></img></Link></li>
    </ul>
     </div>
   )
