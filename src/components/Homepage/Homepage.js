@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
+import ProductList from './productlist';
+import CatagoryBoxes from './catagoryboxes';
 
 const Homepage = () => {
   return (
-    <div>Homepage</div>
+    <div className="homepage">
+      <ProductList />
+      <CatagoryBoxes />
+    </div>
   )
 }
 
