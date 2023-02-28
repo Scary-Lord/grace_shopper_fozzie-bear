@@ -19,7 +19,7 @@ export const fetchUserByID = (id) => async (dispatch) => {
     const { data } = await axios.get(`/api/users/${id}`);
     return data;
   } catch (error) {
-    dispatch(fetchUserFailure(error.message));
+    console.log(error.message);
   }
 };
 
