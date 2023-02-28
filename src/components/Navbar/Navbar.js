@@ -12,10 +12,17 @@ const Navbar = () => {
 
     <div>
    <ul>
-    <li className='navitems'></li>
+    <li className='navitems'>
+      <button onClick={OpenCat}>Categories</button>
+      {open? (
+        <ul>
+          
+        </ul>
+      ):null}
+    </li>
     <li className='navitems'>Home </li>
     <li className='navitems'><Link to={'./'}> Log in </Link>/<Link to={'./'}> Sign Up </Link></li>
-    <li className='navitems'></li>
+    <li className='navitems'><Link><img></img></Link></li>
    </ul>
     </div>
   )
