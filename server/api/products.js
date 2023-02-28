@@ -18,7 +18,7 @@ router.get('api/products', async (req, res) => {
 router.get('api/products/:id', async (req, res) => {
     try {
         const products = await Product.findById(req.params.id);
-        res.json(product);
+        res.json(products);
     } catch (err) {
         res.status =500;
     }

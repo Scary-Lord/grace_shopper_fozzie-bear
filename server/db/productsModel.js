@@ -1,8 +1,16 @@
 const Sequelize =require('sequelize');
 const db = require('./_db');
+const categoryModel = require('./categoryModel')
 
 const Products = db.define('products', {
-    price:{ type: Sequelize.INTEGER,
+    id: { type: Sequelize.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      notNull: true,
+      notEmpty: true
+    },
+
+    price:{ type: Sequelize.DECIMAL,
        validate:{ min: .99 }
       },
 
@@ -17,7 +25,7 @@ const Products = db.define('products', {
         defaultValue: "https://static.thenounproject.com/png/11204-200.png",
       },
 
-      Quantity:{ type: Sequelize.INTEGER,
+      quantity:{ type: Sequelize.INTEGER,
          validate:{ min: 0 }
         },
 
@@ -26,7 +34,7 @@ const Products = db.define('products', {
         notEmpty: true 
       },
 
-     shippingInfo:{type: Sequelize.TEXT
+     shippingInfo:{type: Sequelize.DECIMAL
       , notNull: true,
        notEmpty: true 
       },
@@ -36,16 +44,18 @@ const Products = db.define('products', {
         notEmpty: true 
       },
 
-     Category:{type: Sequelize.TEXT,
+     category:{type: Sequelize.INTEGER,
        notNull: true,
-        notEmpty: true
+        notEmpty: true,
+        categoryId:{
+        type:Sequelize.INTEGER,
+          references: {
+            model: categoryModel,
+            key:'id'
+            // foreignKey:true
+          }
+        }
       }
-
-    
-
-
-  
- 
 })
 
 module.exports  = Products;

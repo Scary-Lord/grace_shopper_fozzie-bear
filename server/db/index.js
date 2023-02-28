@@ -1,8 +1,8 @@
 const db = require('./_db');
-const Users = require('./usersModel')
-const Category  = require('./categoryModel')
-const Products  = require('./productsModel')
-const Cart  = require('./cartModel')
+const Users = require('./usersModel');
+const Category  = require('./categoryModel');
+const Products  = require('./productsModel');
+const Cart  = require('./cartModel');
 //place relations here
 
 Users.hasOne.Cart

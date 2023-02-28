@@ -2,6 +2,12 @@ const Sequelize = require('sequelize');
 const db = require('./_db');
 
 const User = db.define('user', {
+    id:{
+        primaryKey:true,
+        type:Sequelize.INTEGER,
+        unique:true,
+        allowNull:false,
+    },
     fName: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -30,7 +36,7 @@ const User = db.define('user', {
         allowNull: false,
         unique: false
     },
-    State:{
+    state:{
         type: Sequelize.STRING,
         allowNull: false,
         unique: false
