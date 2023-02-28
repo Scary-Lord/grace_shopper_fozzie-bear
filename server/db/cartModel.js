@@ -3,7 +3,7 @@ const db = require('./_db');
 const usersModel = require('./usersModel')
 const productsModel = require('./productsModel')
 
-const Cart = db.define('categories',{
+const Cart = db.define('cart',{
   user: {
     type: Sequelize.INTEGER,
     references: {

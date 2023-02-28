@@ -1,5 +1,5 @@
 const Sequelize =require('sequelize');
-
+const db = require('./_db');
 
 const Products = db.define('products', {
     price:{ type: Sequelize.INTEGER,

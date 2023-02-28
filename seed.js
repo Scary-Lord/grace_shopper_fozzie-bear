@@ -12,217 +12,217 @@ const cartForPost=[
 const categoriesForPost=[
     {
         "id": 1,
-        "category": null,
-        "products": 33
+        "category": 'Samsung',
+        "products": 1
       }, {
         "id": 2,
-        "category": null,
-        "products": 25
+        "category": 'Samsung',
+        "products": 2
       }, {
         "id": 3,
-        "category": null,
-        "products": 34
-      }, {
-        "id": 4,
-        "category": null,
-        "products": 17
-      }, {
-        "id": 5,
-        "category": null,
-        "products": 20
-      }, {
-        "id": 6,
-        "category": null,
-        "products": 35
-      }, {
-        "id": 7,
-        "category": null,
-        "products": 31
-      }, {
-        "id": 8,
-        "category": null,
-        "products": 30
-      }, {
-        "id": 9,
-        "category": null,
-        "products": 16
-      }, {
-        "id": 10,
-        "category": null,
-        "products": 14
-      }, {
-        "id": 11,
-        "category": null,
-        "products": 26
-      }, {
-        "id": 12,
-        "category": null,
-        "products": 24
-      }, {
-        "id": 13,
-        "category": null,
-        "products": 26
-      }, {
-        "id": 14,
-        "category": null,
-        "products": 5
-      }, {
-        "id": 15,
-        "category": null,
-        "products": 12
-      }, {
-        "id": 16,
-        "category": null,
-        "products": 11
-      }, {
-        "id": 17,
-        "category": null,
-        "products": 32
-      }, {
-        "id": 18,
-        "category": null,
-        "products": 33
-      }, {
-        "id": 19,
-        "category": null,
-        "products": 30
-      }, {
-        "id": 20,
-        "category": null,
-        "products": 33
-      }, {
-        "id": 21,
-        "category": null,
-        "products": 14
-      }, {
-        "id": 22,
-        "category": null,
-        "products": 19
-      }, {
-        "id": 23,
-        "category": null,
-        "products": 35
-      }, {
-        "id": 24,
-        "category": null,
-        "products": 22
-      }, {
-        "id": 25,
-        "category": null,
-        "products": 28
-      }, {
-        "id": 26,
-        "category": null,
-        "products": 6
-      }, {
-        "id": 27,
-        "category": null,
-        "products": 9
-      }, {
-        "id": 28,
-        "category": null,
+        "category": 'Samsung',
         "products": 3
       }, {
-        "id": 29,
-        "category": null,
-        "products": 30
+        "id": 4,
+        "category": 'Ram',
+        "products": 4
       }, {
-        "id": 30,
-        "category": null,
-        "products": 22
+        "id": 5,
+        "category": 'keyboard',
+        "products": 5
       }, {
-        "id": 31,
-        "category": null,
+        "id": 6,
+        "category": 'Mouse',
+        "products": 6
+      }, {
+        "id": 7,
+        "category": 'monitors',
+        "products": 7
+      }, {
+        "id": 8,
+        "category": 'Apple',
         "products": 8
       }, {
-        "id": 32,
-        "category": null,
-        "products": 17
-      }, {
-        "id": 33,
-        "category": null,
-        "products": 23
-      }, {
-        "id": 34,
-        "category": null,
+        "id": 9,
+        "category": 'gaming PC',
         "products": 9
       }, {
-        "id": 35,
-        "category": null,
+        "id": 10,
+        "category": 'gaming PC',
+        "products": 10
+      }, {
+        "id": 11,
+        "category": 'gaming PC',
+        "products": 11
+      }, {
+        "id": 12,
+        "category": 'gaming PC',
+        "products": 12
+      }, {
+        "id": 13,
+        "category": 'gaming PC',
+        "products": 13
+      }, {
+        "id": 14,
+        "category": 'gaming PC',
+        "products": 14
+      }, {
+        "id": 15,
+        "category": 'gaming PC',
+        "products": 15
+      }, {
+        "id": 16,
+        "category": 'Apple',
+        "products": 16
+      }, {
+        "id": 17,
+        "category": 'Apple',
+        "products": 17
+      }, {
+        "id": 18,
+        "category": 'Apple',
+        "products": 18
+      }, {
+        "id": 19,
+        "category": 'Apple',
+        "products": 19
+      }, {
+        "id": 20,
+        "category": 'Apple',
+        "products": 20
+      }, {
+        "id": 21,
+        "category": 'Ram',
+        "products": 21
+      }, {
+        "id": 22,
+        "category": 'Ram',
+        "products": 22
+      }, {
+        "id": 23,
+        "category": 'laptops',
+        "products": 23
+      }, {
+        "id": 24,
+        "category": 'laptops',
+        "products": 24
+      }, {
+        "id": 25,
+        "category": 'laptops',
         "products": 25
+      }, {
+        "id": 26,
+        "category": 'laptops',
+        "products": 26
+      }, {
+        "id": 27,
+        "category": 'keyboard',
+        "products": 27
+      }, {
+        "id": 28,
+        "category": 'Keyboard',
+        "products": 28
+      }, {
+        "id": 29,
+        "category": 'Mouse',
+        "products": 29
+      }, {
+        "id": 30,
+        "category":'Mouse',
+        "products": 30
+      }, {
+        "id": 31,
+        "category": 'monitors',
+        "products": 31
+      }, {
+        "id": 32,
+        "category": 'monitors',
+        "products": 32
+      }, {
+        "id": 33,
+        "category": 'monitors',
+        "products": 33
+      }, {
+        "id": 34,
+        "category": 'monitors',
+        "products": 34
+      }, {
+        "id": 35,
+        "category": 'monitors',
+        "products": 35
       },
 ]
 const productsForPost =
 [{
         "id": 1,
-        "name": null,
+        "name": 'Samsung Chromebook ',
         "imageUrl": "http://dummyimage.com/196x100.png/dddddd/000000",
         "Quantity": 15,
         "description": "Idiopathic aseptic necrosis of bone, other site",
-        "Shipping info": "$24.83",
+        "ShippingInfo": "$24.83",
         
         "price": "$3635.37"
       }, {
         "id": 2,
-        "name": null,
+        "name": 'Samsung gaming Book 23S',
         "imageUrl": "http://dummyimage.com/157x100.png/cc0000/ffffff",
         "Quantity": 67,
         "description": "Open bite of right thumb with damage to nail, sequela",
-        "Shipping info": "$5.05",
+        "ShippingInfo": "$5.05",
         
         "price": "$587.50"
       }, {
         "id": 3,
-        "name": null,
+        "name": 'Samsung 21" portable monitor',
         "imageUrl": "http://dummyimage.com/199x100.png/cc0000/ffffff",
         "Quantity": 53,
         "description": "Other drug induced movement disorders",
-        "Shipping info": "$8.15",
+        "ShippingInfo": "$8.15",
         
         "price": "$2014.46"
       }, {
         "id": 4,
-        "name": null,
+        "name": 'Nividia 16gb Ram',
         "imageUrl": "http://dummyimage.com/138x100.png/dddddd/000000",
         "Quantity": 35,
         "description": "Poisoning by tricyclic antidepressants, undetermined, subs",
-        "Shipping info": "$15.61",
+        "ShippingInfo": "$15.61",
         
         "price": "$3824.90"
       }, {
         "id": 5,
-        "name": null,
+        "name": 'Alienware Pro Keyboard',
         "imageUrl": "http://dummyimage.com/162x100.png/dddddd/000000",
         "Quantity": 53,
         "description": "Oth fx shaft of rad, l arm, 7thE",
-        "Shipping info": "$23.77",
+        "ShippingInfo": "$23.77",
         
         "price": "$343.38"
       }, {
         "id": 6,
-        "name": null,
+        "name": 'Alienware Pro Gaming Mouse',
         "imageUrl": "http://dummyimage.com/129x100.png/5fa2dd/ffffff",
         "Quantity": 40,
         "description": "Disp fx of med condyle of r femr, 7thM",
-        "Shipping info": "$12.10",
+        "ShippingInfo": "$12.10",
         
         "price": "$1268.53"
       }, {
         "id": 7,
-        "name": null,
+        "name": 'Sceptre 32" Gaming Monitor',
         "imageUrl": "http://dummyimage.com/173x100.png/ff4444/ffffff",
         "Quantity": 37,
         "description": "Erosion of other prosthetic materials to surrnd org/tiss",
-        "Shipping info": "$20.15",
+        "ShippingInfo": "$20.15",
        
         "price": "$3674.30"
       }, {
         "id": 8,
-        "name": null,
+        "name": 'Apple LOTR special Spider Macbook Pro 2023',
         "imageUrl": "http://dummyimage.com/137x100.png/cc0000/ffffff",
         "Quantity": 57,
         "description": "Disp fx of post column of r acetab, subs for fx w delay heal",
-        "Shipping info": "$5.75",
+        "ShippingInfo": "$5.75",
         
         "price": "$2807.26"
       }, {
@@ -231,7 +231,7 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/214x100.png/ff4444/ffffff",
         "Quantity": 27,
         "description": "Injury of lateral plantar nerve, unspecified leg, sequela",
-        "Shipping info": "$3.56",
+        "ShippingInfo": "$3.56",
         
         "price": "$3722.48"
       }, {
@@ -240,7 +240,7 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/184x100.png/ff4444/ffffff",
         "Quantity": 16,
         "description": "Blister (nonthermal) of oral cavity, subsequent encounter",
-        "Shipping info": "$21.47",
+        "ShippingInfo": "$21.47",
        
         "price": "$1554.25"
       }, {
@@ -249,7 +249,7 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/165x100.png/cc0000/ffffff",
         "Quantity": 6,
         "description": "Corrosion of third degree of abdominal wall, init encntr",
-        "Shipping info": "$10.94",
+        "ShippingInfo": "$10.94",
         
         "price": "$2684.36"
       }, {
@@ -258,7 +258,7 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/189x100.png/5fa2dd/ffffff",
         "Quantity": 26,
         "description": "Corrosion of second degree back of right hand, init encntr",
-        "Shipping info": "$14.65",
+        "ShippingInfo": "$14.65",
         
         "price": "$1776.22"
       }, {
@@ -267,7 +267,7 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/147x100.png/dddddd/000000",
         "Quantity": 64,
         "description": "Sprain of unspecified ligament of unspecified ankle, sequela",
-        "Shipping info": "$20.17",
+        "ShippingInfo": "$20.17",
         
         "price": "$366.02"
       }, {
@@ -276,7 +276,7 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/128x100.png/cc0000/ffffff",
         "Quantity": 15,
         "description": "Insect bite (nonvenomous), left great toe, subs encntr",
-        "Shipping info": "$11.38",
+        "ShippingInfo": "$11.38",
         
         "price": "$1200.38"
       }, {
@@ -285,7 +285,7 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/124x100.png/5fa2dd/ffffff",
         "Quantity": 18,
         "description": "Toxic effect of latex, intentional self-harm, init encntr",
-        "Shipping info": "$9.38",
+        "ShippingInfo": "$9.38",
        
         "price": "$3145.62"
       }, {
@@ -294,7 +294,7 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/209x100.png/cc0000/ffffff",
         "Quantity": 31,
         "description": "Ptosis of breast",
-        "Shipping info": "$15.60",
+        "ShippingInfo": "$15.60",
         
         "price": "$2346.26"
       }, {
@@ -303,7 +303,7 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/119x100.png/5fa2dd/ffffff",
         "Quantity": 73,
         "description": "Unsp fx r low leg, subs for opn fx type I/2 w routn heal",
-        "Shipping info": "$16.16",
+        "ShippingInfo": "$16.16",
         
         "price": "$63.97"
       }, {
@@ -312,7 +312,7 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/173x100.png/dddddd/000000",
         "Quantity": 69,
         "description": "Displ trimalleol fx r low leg, subs for clos fx w nonunion",
-        "Shipping info": "$11.53",
+        "ShippingInfo": "$11.53",
         
         "price": "$460.22"
       }, {
@@ -321,7 +321,7 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/238x100.png/ff4444/ffffff",
         "Quantity": 5,
         "description": "Stress fracture, unsp shoulder, subs for fx w malunion",
-        "Shipping info": "$5.17",
+        "ShippingInfo": "$5.17",
         
         "price": "$2606.67"
       }, {
@@ -330,7 +330,7 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/194x100.png/dddddd/000000",
         "Quantity": 90,
         "description": "Food in trachea causing other injury",
-        "Shipping info": "$2.93",
+        "ShippingInfo": "$2.93",
         
         "price": "$2517.79"
       }, {
@@ -339,7 +339,7 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/160x100.png/dddddd/000000",
         "Quantity": 77,
         "description": "Unsp traum nondisp spondylolysis of fifth cervcal vert, sqla",
-        "Shipping info": "$3.20",
+        "ShippingInfo": "$3.20",
         
         "price": "$3371.62"
       }, {
@@ -348,7 +348,7 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/118x100.png/5fa2dd/ffffff",
         "Quantity": 100,
         "description": "Strain of musc/tend at lower leg level, left leg",
-        "Shipping info": "$10.69",
+        "ShippingInfo": "$10.69",
         
         "price": "$534.56"
       }, {
@@ -357,8 +357,8 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/168x100.png/dddddd/000000",
         "Quantity": 52,
         "description": "Oth water transport accident w military wtrcrft, sequela",
-        "Shipping info": "$7.48",
-        "category": null,
+        "ShippingInfo": "$7.48",
+       
         "price": "$2056.22"
       }, {
         "id": 24,
@@ -366,17 +366,17 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/240x100.png/5fa2dd/ffffff",
         "Quantity": 55,
         "description": "Dislocation of unspecified interphalangeal joint of finger",
-        "Shipping info": "$18.11",
-        "category": null,
+        "ShippingInfo": "$18.11",
+        
         "price": "$3026.71"
       }, {
         "id": 25,
-        "name": null,
+        "name": 'Samsung Odisey 32in monitor',
         "imageUrl": "http://dummyimage.com/218x100.png/cc0000/ffffff",
         "Quantity": 59,
         "description": "Other nondisp fx of lower end of left humerus, sequela",
-        "Shipping info": "$6.05",
-        "category": null,
+        "ShippingInfo": "$6.05",
+        
         "price": "$659.91"
       }, {
         "id": 26,
@@ -384,8 +384,8 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/203x100.png/cc0000/ffffff",
         "Quantity": 53,
         "description": "Animal-rider injured in collision with animal-drawn vehicle",
-        "Shipping info": "$17.00",
-        "category": null,
+        "ShippingInfo": "$17.00",
+        
         "price": "$3545.79"
       }, {
         "id": 27,
@@ -393,8 +393,8 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/121x100.png/dddddd/000000",
         "Quantity": 35,
         "description": "Drown due to fall/jump fr crushed inflatbl crft, sequela",
-        "Shipping info": "$9.26",
-        "category": null,
+        "ShippingInfo": "$9.26",
+        
         "price": "$2288.39"
       }, {
         "id": 28,
@@ -402,8 +402,8 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/200x100.png/ff4444/ffffff",
         "Quantity": 66,
         "description": "Complete lesion at unsp level of thoracic spinal cord, init",
-        "Shipping info": "$17.03",
-        "category": null,
+        "ShippingInfo": "$17.03",
+        
         "price": "$3652.94"
       }, {
         "id": 29,
@@ -411,8 +411,8 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/139x100.png/ff4444/ffffff",
         "Quantity": 56,
         "description": "Laceration with foreign body of wrist",
-        "Shipping info": "$9.47",
-        "category": null,
+        "ShippingInfo": "$9.47",
+       
         "price": "$106.25"
       }, {
         "id": 30,
@@ -420,8 +420,8 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/221x100.png/5fa2dd/ffffff",
         "Quantity": 15,
         "description": "Age-related cataract, morgagnian type, bilateral",
-        "Shipping info": "$18.60",
-        "category": null,
+        "ShippingInfo":"$18.60",
+        
         "price": "$3686.78"
       }, {
         "id": 31,
@@ -429,8 +429,8 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/160x100.png/cc0000/ffffff",
         "Quantity": 77,
         "description": "Sltr-haris Type I physl fx upr end humer, unsp arm, 7thK",
-        "Shipping info": "$17.58",
-        "category": null,
+        "ShippingInfo": "$17.58",
+        
         "price": "$2686.34"
       }, {
         "id": 32,
@@ -438,8 +438,8 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/105x100.png/dddddd/000000",
         "Quantity": 97,
         "description": "Unil post-trauma osteoarth of 1st carpometacarp jt, r hand",
-        "Shipping info": "$5.54",
-        "category": null,
+        "ShippingInfo": "$5.54",
+        
         "price": "$2778.13"
       }, {
         "id": 33,
@@ -447,8 +447,8 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/162x100.png/dddddd/000000",
         "Quantity": 27,
         "description": "Oth fracture of left acetabulum, subs for fx w nonunion",
-        "Shipping info": "$9.41",
-        "category": null,
+        "ShippingInfo": "$9.41",
+        
         "price": "$3679.06"
       }, {
         "id": 34,
@@ -456,8 +456,8 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/196x100.png/dddddd/000000",
         "Quantity": 97,
         "description": "Torus fx upper end of left fibula, subs for fx w nonunion",
-        "Shipping info": "$21.65",
-        "category": null,
+        "ShippingInfo": "$21.65",
+        
         "price": "$1597.42"
       }, {
         "id": 35,
@@ -465,8 +465,8 @@ const productsForPost =
         "imageUrl": "http://dummyimage.com/146x100.png/ff4444/ffffff",
         "Quantity": 77,
         "description": "Flexion deformity, finger joints",
-        "Shipping info": "$14.53",
-        "category": null,
+        "ShippingInfo": "$14.53",
+        
         "price": "$1036.77"
       },
 ]
