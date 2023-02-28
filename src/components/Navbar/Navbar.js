@@ -16,7 +16,10 @@ const Navbar = () => {
       <button onClick={OpenCat}>Categories</button>
       {open? (
         <ul>
-          
+          <li className='navitems'> </li>
+          <li className='navitems'>Home </li>
+          <li className='navitems'>Home </li>
+          <li className='navitems'>Home </li>
         </ul>
       ):null}
     </li>
