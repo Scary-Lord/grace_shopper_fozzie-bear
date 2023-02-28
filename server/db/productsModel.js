@@ -39,10 +39,10 @@ const Products = db.define('products', {
        notEmpty: true 
       },
 
-     reviewRatings:{type: Sequelize.TEXT,
-       notNull: true,
-        notEmpty: true 
-      },
+    //  reviewRatings:{type: Sequelize.TEXT,
+    //    notNull: true,
+    //     notEmpty: true 
+    //   },
 
      category:{type: Sequelize.INTEGER,
        notNull: true,
