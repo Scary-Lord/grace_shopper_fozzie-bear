@@ -11,7 +11,7 @@ const Navbar = () => {
     
 
     <div>
-   <ul>
+   <ul className='ulNav'>
     <li className='navitems'>
       <button onClick={OpenCat}>Categories</button>
       {open? (
