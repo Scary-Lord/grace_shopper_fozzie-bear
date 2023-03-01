@@ -1,57 +1,67 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// action creator to fetch all products
-export const fetchProducts = () => async (dispatch) => {
-    try {
-        dispatch(fetchProductsStart());
-        const response = await axios.get("api/products");
-        dispatch(fetchProductsSuccess(response.data));
-    } catch (error) {
-        dispatch(fetchProductsFailure(error.message));
-    }
-};
+// create an async thunk to fetch all products
+export const fetchProductsAsync = createAsyncThunk(
+  "products/fetchProducts",
+  async () => {
+    const response = await axios.get("api/products");
+    return response.data;
+  }
+);
 
-// action creator to fetch product by ID
-export const fetchProductByID = (id) => async (dispatch) => {
-    try {
-        dispatch(fetchProductsStart());
-        const response = await axios.get(`api/products/${id}`);
-        dispatch (fetchProductsSuccess(response.data));
-    } catch (error) {
-        dispatch(fetchProductsFailure(error.message))
-    }
-};
+// create an async thunk to fetch a product by ID
+export const fetchProductByIdAsync = createAsyncThunk(
+  "products/fetchProductById",
+  async (id) => {
+    const response = await axios.get(`api/products/${id}`);
+    return response.data;
+  }
+);
 
 const initialState = {
-    products: [],
-    loading: false,
-    error: null,
+  products: [],
+  loading: false,
+  error: null,
+  selectedProduct: null,
 };
 
 const productSlice = createSlice({
-    name: "product",
-    initialState,
-    reducers: {
-        fetchProductsStart(state) {
-            state.loading = true;
-        },
-        fetchProductsSuccess(state, action) {
-            state.products = action.payload;
-            state.loading = false;
-        },
-        fetchProductsFailure(state, action) {
-            state.loading = false;
-            state.error = action.payload;
-        },
-        fetchProductSuccess(state, action) {
-            state.product = action.payload;
-            state.loading = false;
-        }
-
-    }
+  name: "products",
+  initialState,
+  reducers: {
+    setSelectedProduct(state, action) {
+      state.selectedProduct = action.payload;
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchProductsAsync.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchProductsAsync.fulfilled, (state, action) => {
+        state.loading = false;
+        state.products = action.payload;
+      })
+      .addCase(fetchProductsAsync.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(fetchProductByIdAsync.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchProductByIdAsync.fulfilled, (state, action) => {
+        state.loading = false;
+        state.selectedProduct = action.payload;
+      })
+      .addCase(fetchProductByIdAsync.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      });
+  },
 });
 
-export const { fetchProductsStart, fetchProductsSuccess, fetchProductSucess, fetchProductsFailure } = productSlice.actions;
+export const { setSelectedProduct } = productSlice.actions;
 
 export default productSlice.reducer;
+
