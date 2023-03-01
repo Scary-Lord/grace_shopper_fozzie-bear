@@ -1,8 +1,8 @@
 import React from 'react';
 import ProductList from './productlist';
-import CategoryBoxes from './catagoryboxes';
-import Footer from '../footer'
-import Navbar from '../Navbar';
+import CategoryBoxes from './categoryboxes';
+import Footer from '../Footer/Footer'
+import Navbar from '../Navbar/Navbar';
 
 const Homepage = () => {
   return (
