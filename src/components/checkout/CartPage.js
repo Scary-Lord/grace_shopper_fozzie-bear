@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import Footer from '../Footer/Footer'
 import { useSelector } from 'react-redux'
@@ -8,11 +8,19 @@ const CartPage = () => {
   // get cart items (getCart)...need to make the reducer that does this
   const cart = useSelector(getCart)
   
+  // make reducer to add shipping info to account?
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [streetAdd, setStreetAdd] = useState('')
+  const [city, setCity] = useState('')
+  const [state, setState] = useState('')
+  const [zip, setZip] = useState('')
+  
   const totalPrice = (cart) => {
     if(cart.length) {
       cart.reduce((total, product) => {
         return total += product.price
-      }, 0) 
+      }, 0)
     }
     else {
       return 0
@@ -38,23 +46,35 @@ const CartPage = () => {
 
           <h2>Please fill out your shipping address:</h2>
           <form className='shippingInfo'>
-              <label>First and last name:</label>
-              <input></input>
+              <label>First name:</label>
+              <input
+              value={firstName}
+              onChange={e => setFirstName(e.target.value)}/>
+             
+              <label>Last name:</label>
+              <input
+              value={lastName}
+              onChange={e => setLastName(e.target.value)}/>
 
               <label>Street address:</label>
-              <input></input>
-
-              <label>Apt/Unit number:</label>
-              <input></input>
+              <input
+              value={streetAdd}
+              onChange={e => setStreetAdd(e.target.value)}/>
 
               <label>City:</label>
-              <input></input>
+              <input
+              value={city}
+              onChange={e => setCity(e.target.value)}/>
 
               <label>State:</label>
-              <input></input>
+              <input
+              value={state}
+              onChange={e => setState(e.target.value)}/>
 
               <label>Zip code:</label>
-              <input></input>
+              <input
+              value={zip}
+              onChange={e => setZip(e.target.value)}/>
           </form>
 
           <Link to='/confirmation'>Checkout</Link>
