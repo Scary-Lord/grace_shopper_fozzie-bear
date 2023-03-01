@@ -1,21 +1,21 @@
-import React from react;
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CategoryBoxes = () => {
     return (
         <div className="catagory-boxes">
-            <div className="catagory-box">
+            <Link to =".products/monitors">
                 <h3>Monitors</h3>
-            </div>
-            <div className="catagory-box">
+            </Link>
+            <Link to =".products/keyboards">
                 <h3>Keyboards</h3>
-            </div>
-            <div className="catagory-box">
-                <h3>Mouse</h3>
-            </div>
-            <div className="catagory-box">
+            </Link>
+            <Link to =".products/mouses">
+                <h3>Mouses</h3>
+            </Link>
+            <Link to ="./products/accessories">
                 <h3>Accessories</h3>
-            </div>
-
+            </Link>
         </div>
     )
 };
