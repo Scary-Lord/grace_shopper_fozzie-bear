@@ -9,10 +9,15 @@ export const addUserAsync = createAsyncThunk("addUser", async () => {
   });
   return data;
 });
-const addUsersSlice = createSlice({
+const UsersSlice = createSlice({
   name: "addUsers",
   initialState,
-  reducers: {},
+  reducers: {
+    createUsers:(state, action) =>{ // with state you access the current value of the initialstate value
+      state.value.push(action.payload);
+          // we write code for adding a users
+  },
+  },
   extraReducers: (builder) => {
  
 }});
@@ -21,4 +26,4 @@ export const selectUsers = (state) => {
   return state;
 };
 
-export default usersSlice.reducer;
+export default UsersSlice.reducer;
