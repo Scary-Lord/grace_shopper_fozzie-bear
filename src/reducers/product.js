@@ -16,7 +16,7 @@ export const fetchProducts = () => async (dispatch) => {
 export const fetchProductByID = (id) => async (dispatch) => {
     try {
         dispatch(fetchProductsStart());
-        const response = await axios.get("api/products/${id}");
+        const response = await axios.get(`api/products/${id}`);
         dispatch (fetchProductsSuccess(response.data));
     } catch (error) {
         dispatch(fetchProductsFailure(error.message))
@@ -48,7 +48,7 @@ const productSlice = createSlice({
             state.product = action.payload;
             state.loading = false;
         }
-        
+
     }
 });
 
