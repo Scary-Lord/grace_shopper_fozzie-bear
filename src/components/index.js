@@ -10,6 +10,7 @@ export {default as Help} from './Footer/Help.js'
 export {default as CreateProfile} from './CreateProfile/CreateProfile.js'
 // checkout folder
 export {default as CartPage} from './checkout/CartPage.js'
+export {default as Confirmation} from './checkout/Confirmation.js'
 // navbar folder
 export {default as Navbar} from './Navbar/Navbar.js'
 // products folder
