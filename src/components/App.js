@@ -1,11 +1,12 @@
 import {Route, Routes } from "react-router-dom";
 import { Contact, Help } from "../components/Footer";
 import { CartPage, Confirmation } from "./checkout";
+import Navbar from "./Navbar/Navbar";
 
 function App() {
   return (
     <div className="App">
-      
+      <Navbar/>
       <Routes>
         <Route path="/contact" element={<Contact />} />
         <Route path="/help" element={<Help />} />

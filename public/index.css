@@ -1,0 +1,39 @@
+/* navbar area */
+
+.navbcolor{
+    background-color: black;
+    color:white;
+    height:60px;
+    font-size: 26px;
+}
+.ulNav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.navitems{
+    list-style: none;
+    text-align: center;
+    flex-wrap: wrap;
+
+}
+.Anchors{
+    text-decoration: none;
+    color:white;
+
+}
+.Anchors:hover{
+    color: cyan;
+}
+.navcartimg{
+    height: 60px;
+    width: 60px;
+}
+
+.navcat{
+    z-index: 10;
+    background-color: black;
+    display: block;
+}
