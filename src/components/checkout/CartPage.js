@@ -5,10 +5,8 @@ import Footer from '../Footer/Footer'
 import { Link } from 'react-router-dom'
 
 const CartPage = () => {
-  // get cart items (getCart)...need to make the reducer that does this
-  // const cart = useSelector();
+  // const cart = useSelector(selectCart);
   
-  // make reducer to add shipping info to account?
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [streetAdd, setStreetAdd] = useState('')
