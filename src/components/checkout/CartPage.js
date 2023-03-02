@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import Footer from '../Footer/Footer'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const CartPage = () => {
   // get cart items (getCart)...need to make the reducer that does this
-  const cart = useSelector()
+  // const cart = useSelector();
   
   // make reducer to add shipping info to account?
   const [firstName, setFirstName] = useState('')
@@ -34,7 +34,7 @@ const CartPage = () => {
           <h1>Your cart:</h1>
 
           {/* checks if there are items in the cart, and maps them to a list if there are */}
-          {cart && cart.length ?
+          {/* {cart && cart.length ?
             cart.map((product, i) => (
               <div className='cartItem' key={i}>
                 <li>{product.name}</li>
@@ -42,7 +42,7 @@ const CartPage = () => {
               </div>
           )) : <h1>It looks like your cart is empty</h1>}
           
-          <h2>Cart total: ${totalPrice(cart)}</h2>
+          <h2>Cart total: ${totalPrice(cart)}</h2> */}
 
           <h2>Please fill out your shipping address:</h2>
           <form className='shippingInfo'>
