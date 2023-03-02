@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import {  useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchProductByIdAsync } from "../../reducers/product";
 
 const ProductCard = () => {
   const{productid}= useParams();
@@ -9,7 +10,7 @@ const ProductCard = () => {
 
    const dispatch = useDispatch();
 
-  useEffect(()=>{dispatch(fetchProductByID(productid))});
+  useEffect(()=>{dispatch(fetchProductByIdAsync(productid))});
   return (
      <div id="product-card" >
         <div className='column'>
