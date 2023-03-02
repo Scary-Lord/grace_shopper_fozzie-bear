@@ -5,13 +5,13 @@ const Products  = require('./productsModel');
 const Cart  = require('./cartModel');
 //place relations here
 
-Users.hasOne.Cart
-Cart.belongsToMany.Users
-Cart.hasMany.Products
+Users.hasOne(Cart)
+Cart.belongsToMany(Users)
+Cart.hasMany(Products)
 
-Products.hasOne.Category
-Products.belongsTo.Category
-Category.hasMany.Products
+Products.hasOne(Category)
+Products.belongsTo(Category)
+Category.hasMany(Products)
 
 module.exports = {
     db,

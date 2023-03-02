@@ -13,15 +13,24 @@ export const getCart = createAsyncThunk('cart/getCart',
 )
 
 export const addToCart = createAsyncThunk('cart/addToCart',
-	async (product, userId) => {
-		const { data } = await axios.put(`/api/cart/${userId}`, {product})
-		return data
+	async ({ userId, product }) => {
+		try {
+			const { data } = await axios.put(`/api/cart/${userId}/${product}`)
+			return data
+		} catch (err) {
+			console.log(err)
+		}
 	}
 )
 
 export const removeFromCart = createAsyncThunk('cart/removeFromCart',
-	async (product) => {
-		
+	async ({ userId, product }) => {
+		try {
+			const { data } = await axios.delete(`/api/cart/${userId}/${product}`)
+			return data
+		} catch (err) {
+			console.log(err)
+		}
 	}
 )
 
@@ -35,6 +44,9 @@ const cartSlice = createSlice({
 		})
 		builder.addCase(addToCart.fulfilled, (state, action) => {
 			state.push(action.payload)
+		})
+		builder.addCase(removeFromCart.fulfilled, (state, action) => {
+			return state
 		})
 	}
 })
