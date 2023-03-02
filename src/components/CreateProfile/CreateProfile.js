@@ -21,6 +21,8 @@ const CreateProfile = () => {
     
     <div>
         <div>
+          <h2>Create your account</h2>
+
           <p>First Name</p>
             <input type="text" placeholder='First Name' onChange={(event)=>{setFirstName(event.target.value)}}/>
             
@@ -46,7 +48,7 @@ const CreateProfile = () => {
             <p>Zipcode</p>
             <input type="number" placeholder='Type Here' onChange={(event)=>{setZipcode(event.target.value)}}/>
             <div>
-              <button onClick={()=>{dispatch(addUsers({id: studentList[studentList.length -1].id +1, firstName, lastName, username, email, address, city, state, zipcode }))}}>Submitt</button>
+              {/* <button onClick={()=>{dispatch(addUsers({id: studentList[studentList.length -1].id +1, firstName, lastName, username, email, address, city, state, zipcode }))}}>Submitt</button> */}
               {/* in this area i put all the data to be added when clicked and the in is going to be incremented by 1 everytime by adding 1 to  the last one */}
             </div>
 
