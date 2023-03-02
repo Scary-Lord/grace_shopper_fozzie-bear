@@ -21,7 +21,7 @@ export const addToCart = createAsyncThunk('cart/addToCart',
 
 export const removeFromCart = createAsyncThunk('cart/removeFromCart',
 	async (product) => {
-		const { data } = await axios.get(`/api/cart/${userId}`)
+		
 	}
 )
 
