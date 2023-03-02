@@ -2,7 +2,7 @@ import React from 'react'
 import ProductCard from './ProductCard';
 import { NavLink } from "react-router-dom";
 
-const products = (product) => {
+const Products = (product) => {
   return (
     <div className='product-card'>{product.map((item)=>(
       <NavLink to={`api/products/${item.id}`} key={`All Products: ${item.id}`}>
@@ -14,4 +14,4 @@ const products = (product) => {
   )
 }
 
-export default products
+export default Products
