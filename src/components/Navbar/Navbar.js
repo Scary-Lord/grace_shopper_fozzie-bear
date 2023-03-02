@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
+
+import SecNavbar from './SecNavbar'
+
 const Navbar = () => {
 
   const[open, setOpen]= useState(false)
@@ -9,31 +12,31 @@ const Navbar = () => {
 
   return (
     
-
-    <div>
+<div>
+    <div className='navbcolor'>
    <ul className='ulNav'>
-    <li className='navitems'>
-      <button onClick={OpenCat}>Categories</button>
-      {open? (
-        <ul>
-          <li className='navitems'>Samsung </li>
-          <li className='navitems'>Gaming Pc </li>
-          <li className='navitems'>Apple </li>
-          <li className='navitems'>Mouse </li>
-          <li className='navitems'>Monitors </li>
-          <li className='navitems'>Ram </li>
-          <li className='navitems'>Laptops </li>
-        </ul>
-      ):null}
-      
-    </li>
+    
     <li className='navitems'><Link className='Anchors' to={'/'}>Home</Link> </li>
+    <button onClick={OpenCat}>Categories</button>
+    
+
     <li className='navitems'>
       <Link className='Anchors' to={'/'}> Log in </Link>/
       <Link className='Anchors' to={'/user/addUser'}> Sign Up </Link>
     </li>
-    <li className='navitems'><Link className='Anchors' to={'/user/:cart'}><img src={"https://cdn-icons-png.flaticon.com/512/5465/5465858.png"} alt="cart"></img></Link></li>
+
+    <li className='navitems'><Link className='Anchors' to={'/cartPage'}><img className='navcartimg' src={"https://img.myloview.com/stickers/shopping-cart-icon-isolated-on-dark-background-400-253477467.jpg"} alt="cart"></img></Link> </li>
+   
    </ul>
+    </div>
+    <div>
+      
+      {open? (
+        <SecNavbar/>
+      ):null}
+      
+      </div>
+   
     </div>
   )
 }

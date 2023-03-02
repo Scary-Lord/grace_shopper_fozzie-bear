@@ -1,0 +1,109 @@
+body{
+    margin: 0;
+    
+   
+    
+}
+
+/* navbar area */
+
+.navbcolor{
+    background-color:rgb(57, 71, 57);
+    color:white;
+    
+    font-size: 26px;
+    z-index: 1;
+   
+    
+}
+.ulNav{
+    margin:0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 65px;
+    
+}
+.navitems{
+    list-style: none;
+    text-align: center;
+    flex-wrap: wrap;
+
+}
+.Anchors{
+    text-decoration: none;
+    color:white;
+
+}
+.Anchors:hover{
+    color: rgb(116, 121, 57);
+}
+.navcartimg{
+    height: 60px;
+    width: 60px;
+}
+
+.navcat{
+    z-index: 99;
+    background-color: black;
+    display: block;
+}
+
+
+
+
+
+
+/* secondary navbar */
+.secnavbcolor{
+    background-color:rgb(100, 126, 100);
+   
+    font-size: 20px;
+   
+    
+}
+.seculNav{
+    margin:0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 40px;
+    
+}
+.secnavitems{
+    list-style: none;
+    text-align: center;
+    flex-wrap: wrap;
+    border-left: 1px solid white;
+    padding-left: 10px;
+
+}
+.secnavlinks{
+    text-decoration: none;
+    color:white;
+}
+
+.secnavlinks:hover{
+    color:rgb(43, 44, 28);
+}
+
+/*  footer */
+.footer{
+    height: 45px;
+    background-color:rgb(57, 71, 57);
+   align-items: center;
+    display: flex;
+    justify-content: space-around;
+ position: sticky;
+   
+}
+.footLink{
+    text-decoration: none;
+    color: white;
+
+}
+.footLink:hover{
+    color: rgb(116, 121, 57);
+}

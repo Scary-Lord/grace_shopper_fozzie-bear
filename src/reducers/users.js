@@ -28,13 +28,13 @@ const usersSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(fetchUsersAsync.fulfilled, (state, action) => {
-            // Add user to the state array
-            return action.payload;
-        });
-        builder.addCase(fetchUserByID.fulfilled, (state, action) => {
-          return action.payload;
-        });
+        // builder.addCase(fetchUsersAsync.fulfilled, (state, action) => {
+        //     // Add user to the state array
+        //     return action.payload;
+        // });
+        // builder.addCase(fetchUserByID.fulfilled, (state, action) => {
+        //   return action.payload;
+        // });
     },
 });
 

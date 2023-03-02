@@ -1,21 +1,23 @@
 import {Route, Routes } from "react-router-dom";
-import Homepage from "./Homepage/Homepage";
-import Products from "./Products/Products";
+import { Contact, Help } from "../components/Footer";
+import { CartPage, Confirmation } from "./checkout";
 import Navbar from "./Navbar/Navbar";
-import Footer from "./Footer/Footer";
-// import CreateProfile from "./CreateProfile/CreateProfile";
-
-
+import CreateProfile from "./CreateProfile/CreateProfile";
+import Footer from "../components/Footer/Footer";
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Navbar/>
+      
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/products" element={<Products />} />
-        {/* <Route path="/createprofile" element={<CreateProfile />} /> */}
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/help" element={<Help />} />
+        <Route path="/cartPage" element={<CartPage />} />
+        <Route path="/confirmation" element={<Confirmation />} />
+        <Route path='/user/addUser' element={<CreateProfile />} />
       </Routes>
-      <Footer />
+      
+      <Footer/>
     </div>
   );
 }

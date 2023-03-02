@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const CartPage = () => {
   // get cart items (getCart)...need to make the reducer that does this
-  const cart = useSelector(getCart)
+  const cart = useSelector()
   
   // make reducer to add shipping info to account?
   const [firstName, setFirstName] = useState('')
