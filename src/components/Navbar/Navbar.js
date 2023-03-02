@@ -17,7 +17,8 @@ const Navbar = () => {
    <ul className='ulNav'>
     
     <li className='navitems'><Link className='Anchors' to={'/'}>Home</Link> </li>
-    <button onClick={OpenCat}>Categories</button>
+
+     <li className='navitems'><button onClick={OpenCat}>Categories</button></li>
     
 
     <li className='navitems'>
