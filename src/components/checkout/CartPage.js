@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 import Navbar from '../Navbar/Navbar'
 import Footer from '../Footer/Footer'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { removeFromCart, selectCart } from '../../reducers/cart'
 
 const CartPage = () => {
-  const cart = useSelector(state => state.cart);
+  const dispatch = useDispatch()
+  const cart = useSelector(selectCart)
   
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -14,9 +16,9 @@ const CartPage = () => {
   const [state, setState] = useState('')
   const [zip, setZip] = useState('')
   
-  const totalPrice = () => {
+  const totalPrice = (cart) => {
     if(cart.length) {
-      return cart.reduce((total, product) => {
+      cart.reduce((total, product) => {
         return total += product.price
       }, 0)
     }
@@ -32,15 +34,17 @@ const CartPage = () => {
           <h1>Your cart:</h1>
 
           {/* checks if there are items in the cart, and maps them to a list if there are */}
-          {/* {cart && cart.length ?
+          {cart && cart.length ?
             cart.map((product, i) => (
               <div className='cartItem' key={i}>
                 <li>{product.name}</li>
                 <li>{product.price}</li>
+                {/* need to be able to access the user's id */}
+                {/* <button onClick={() => dispatch(removeFromCart(userId, product.id))}>Remove</button> */}
               </div>
-          )) : <h1>It looks like your cart is empty</h1>} */}
+          )) : <h1>It looks like your cart is empty!</h1>}
           
-          <h2>Cart total: ${totalPrice()}</h2>
+          <h2>Cart total: ${totalPrice(cart)}</h2>
 
           <h2>Please fill out your shipping address:</h2>
           <form className='shippingInfo'>
