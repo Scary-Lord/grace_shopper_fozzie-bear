@@ -160,6 +160,14 @@ body{
     text-align: center;
 }
 
+.confirmationPage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
 
 /* mobile devices */
 
