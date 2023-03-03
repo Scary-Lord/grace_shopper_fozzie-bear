@@ -15,6 +15,10 @@ export const getCart = createAsyncThunk('cart/getCart',
 export const addToCart = createAsyncThunk('cart/addToCart',
 	async ({ userId, product }) => {
 		try {
+			// generate random userId for guest checkout
+			if(!userId){
+				userId = Math.floor(Math.random() * 10000000)
+			}
 			const { data } = await axios.put(`/api/cart/${userId}/${product}`)
 			return data
 		} catch (err) {

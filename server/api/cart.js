@@ -5,20 +5,20 @@ const Products = require('../db')
 // get the cart by the userID
 router.get('/:userId', async (req, res, next) => {
     try {
-        const cart = await Cart.findOne({where: {user: req.params.userId}})
+        // uses findOrCreate; if cart doesnt exist, makes one and assigns userId
+        const cart = await Cart.findOrCreate({
+            where: {user: req.params.userId},
+        })
         res.json(cart)
     } catch (err) {
         next(err)
     }
 })
 
-// make a cart if there is none associated with the user
+// make a cart for the user based on userId
 router.post('/:userId', async (req, res, next) => {
     try {
-        const cart = await Cart.findOrCreate({
-            where: {user: req.params.userId},
-            defaults: {products: req.body}
-        })
+        const cart = await Cart.findOne({where: {user: req.params.userId}})
         res.json(cart)
     } catch (err) {
         next(err)
@@ -30,6 +30,7 @@ router.put('/:userId/:productId', async (req, res, next) => {
     try {
         const cart = await Cart.findOne({where: {user: req.params.userId}})
         const product = await Products.findByPk(req.params.productId)
+        // sequelize magic method for adding a product to the cart found via the userId
         await cart.addProducts(product)
         res.json(cart)
     } catch (err) {
@@ -42,10 +43,12 @@ router.delete('/:userId/:productId', async (req, res, next) => {
     try {
         const cart = await Cart.findOne({where: {user: req.params.userId}})
         const product = await Products.findByPk(req.params.productId)
+        // sequelize magic method for removing a product from the user's cart
         await cart.removeProducts(product)
         res.json(cart)
     } catch (err) {
         next(err)
     }
 })
+
 module.exports = router;
