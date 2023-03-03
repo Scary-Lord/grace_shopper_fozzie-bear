@@ -8,10 +8,12 @@ import CreateProfile from "./CreateProfile/CreateProfile";
 import Products from "./Products/Products";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsAsync } from '../reducers/product';
+import { fetchUsersAsync } from '../reducers/users';
 
 function App() {
    const dispatch=useDispatch()
   React.useEffect(()=>{dispatch(fetchProductsAsync())},[dispatch])
+  React.useEffect(()=>{dispatch(fetchUsersAsync())},[dispatch])
 
   return (
     <div className="App">
