@@ -5,7 +5,7 @@ import { fetchProductByIdAsync } from "../../reducers/product";
 
 const ProductCard = () => {
   const { productid } = useParams();
-  const singleProduct = useSelector(state => state.product.singleProduct);
+  const singleProduct = useSelector(state => state.singleProduct);
   const { name, price,  imageUrl } = singleProduct;
 
   const dispatch = useDispatch();
