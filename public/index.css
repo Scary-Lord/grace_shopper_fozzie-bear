@@ -108,14 +108,65 @@ body{
     color: rgb(116, 121, 57);
 }
 
+/* footer links */
 
+.contactPage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+}
 
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+}
 
+.helpPage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+}
 
+.helpForm {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+}
 
+/* cart page */
 
+.shippingInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 60%;
+    justify-content: center;
+    margin: auto;
+}
 
+.cartPage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+}
 
+.confirmationPage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
 
 
 /* mobile devices */
