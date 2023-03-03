@@ -6,14 +6,19 @@ import { CartPage, Confirmation } from "./checkout";
 import Homepage from "./Homepage/Homepage";
 import CreateProfile from "./CreateProfile/CreateProfile";
 import Products from "./Products/Products";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProductsAsync } from '../reducers/product';
 
 function App() {
+   const dispatch=useDispatch()
+  React.useEffect(()=>{dispatch(fetchProductsAsync())},[dispatch])
+
   return (
     <div className="App">
-     
+
 
       <Routes>
-      <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Homepage />} />
         <Route path='/products' element={<Products/>}/>
         <Route path="/contact" element={<Contact />} />
         <Route path="/help" element={<Help />} />
@@ -22,7 +27,7 @@ function App() {
         <Route path='/user/addUser' element={<CreateProfile />} />
       </Routes>
 
-   
+
     </div>
   );
 }

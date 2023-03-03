@@ -3,8 +3,8 @@ import usersReducer from './reducers/users';
 import productReducer from './reducers/product'
 const store = configureStore({
     reducer:{
-        product:productReducer,
-        users: usersReducer
+        products:productReducer,
+        users: usersReducer,
     }
 })
 

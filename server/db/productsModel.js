@@ -31,12 +31,12 @@ const Products = db.define('products', {
 
      description: { type: Sequelize.TEXT,
        notNull: true,
-        notEmpty: true 
+        notEmpty: true
       },
 
      shippinginfo:{type: Sequelize.DECIMAL
       , notNull: true,
-       notEmpty: true 
+       notEmpty: true
       },
 
      category:{type: Sequelize.INTEGER,
