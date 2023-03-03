@@ -5,7 +5,7 @@ const {db, User, Categories, Products}= require('./server/db');
 // const cartForPost=[
 
 // ]
-export const categoriesForPost=[
+ const categoriesForPost=[
     {
         id: 1,
         category: 'Samsung',
@@ -42,14 +42,14 @@ export const categoriesForPost=[
         
       },
 ]
-export const productsForPost =
+ const productsForPost =
 [{
         id: 1,
         name: 'Samsung Chromebook ',
         imageUrl: "http://dummyimage.com/196x100.png/dddddd/000000",
         quantity: 15,
         description: "Idiopathic aseptic necrosis of bone, other site",
-        shippinginfo: 24.83,
+        shippingInfo: 24.83,
         category: 1,
         price: 3635.37
       }, {
@@ -58,7 +58,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/157x100.png/cc0000/ffffff",
         quantity: 67,
         description: "Open bite of right thumb with damage to nail, sequela",
-        shippinginfo: 5.05,
+        shippingInfo: 5.05,
         category: 1,
         price: 587.50
       }, {
@@ -67,7 +67,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/199x100.png/cc0000/ffffff",
         quantity: 53,
         description: "Other drug induced movement disorders",
-        shippinginfo: 8.15,
+        shippingInfo: 8.15,
         category: 1,
         price: 2014.46
       }, {
@@ -76,7 +76,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/138x100.png/dddddd/000000",
         quantity: 35,
         description: "Poisoning by tricyclic antidepressants, undetermined, subs",
-        shippinginfo: 15.61,
+        shippingInfo: 15.61,
         category: 1,
         price: 3824.90
       }, {
@@ -85,7 +85,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/162x100.png/dddddd/000000",
         quantity: 53,
         description: "Oth fx shaft of rad, l arm, 7thE",
-        shippinginfo: 23.77,
+        shippingInfo: 23.77,
         category: 1,
         price: 343.38
       }, {
@@ -94,7 +94,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/129x100.png/5fa2dd/ffffff",
         quantity: 40,
         description: "Disp fx of med condyle of r femr, 7thM",
-        shippinginfo: 12.10,
+        shippingInfo: 12.10,
         category: 2,
         price: 1268.53
       }, {
@@ -103,7 +103,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/173x100.png/ff4444/ffffff",
         quantity: 37,
         description: "Erosion of other prosthetic materials to surrnd org/tiss",
-        shippinginfo: 20.15,
+        shippingInfo: 20.15,
         category: 2,
         price: 3674.30
       }, {
@@ -112,7 +112,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/137x100.png/cc0000/ffffff",
         quantity: 57,
         description: "Disp fx of post column of r acetab, subs for fx w delay heal",
-        shippinginfo: "5.75",
+        shippingInfo: "5.75",
         category: 2,
         price: "2807.26"
       }, {
@@ -121,7 +121,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/214x100.png/ff4444/ffffff",
         quantity: 27,
         description: "Injury of lateral plantar nerve, unspecified leg, sequela",
-        shippinginfo: 3.56,
+        shippingInfo: 3.56,
         category: 2,
         price: 3722.48
       }, {
@@ -130,7 +130,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/184x100.png/ff4444/ffffff",
         quantity: 16,
         description: "Blister (nonthermal) of oral cavity, subsequent encounter",
-        shippinginfo: 21.47,
+        shippingInfo: 21.47,
         category: 2,
         price: 1554.25
       }, {
@@ -139,7 +139,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/165x100.png/cc0000/ffffff",
         quantity: 6,
         description: "Corrosion of third degree of abdominal wall, init encntr",
-        shippinginfo: 10.94,
+        shippingInfo: 10.94,
         category: 3,
         price: 2684.36
       }, {
@@ -148,7 +148,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/189x100.png/5fa2dd/ffffff",
         quantity: 26,
         description: "Corrosion of second degree back of right hand, init encntr",
-        shippinginfo: 14.65,
+        shippingInfo: 14.65,
         category: 3,
         price: 776.22
       }, {
@@ -157,7 +157,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/147x100.png/dddddd/000000",
         quantity: 64,
         description: "Sprain of unspecified ligament of unspecified ankle, sequela",
-        shippinginfo: 20.17,
+        shippingInfo: 20.17,
         category: 3,
         price: 366.02
       }, {
@@ -166,7 +166,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/128x100.png/cc0000/ffffff",
         quantity: 15,
         description: "Insect bite (nonvenomous), left great toe, subs encntr",
-        shippinginfo: 11.38,
+        shippingInfo: 11.38,
         category: 3,
         price: 1200.38
       }, {
@@ -175,7 +175,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/124x100.png/5fa2dd/ffffff",
         quantity: 18,
         description: "Toxic effect of latex, intentional self-harm, init encntr",
-        shippinginfo: 9.38,
+        shippingInfo: 9.38,
         category: 3,
         price: 3145.62
       }, {
@@ -184,7 +184,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/209x100.png/cc0000/ffffff",
         quantity: 31,
         description: "Ptosis of breast",
-        shippinginfo: 15.60,
+        shippingInfo: 15.60,
         category: 4,
         price: 2346.26
       }, {
@@ -193,7 +193,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/119x100.png/5fa2dd/ffffff",
         quantity: 73,
         description: "Unsp fx r low leg, subs for opn fx type I/2 w routn heal",
-        shippinginfo: 16.16,
+        shippingInfo: 16.16,
         category: 4,
         price: 63.97
       }, {
@@ -202,7 +202,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/173x100.png/dddddd/000000",
         quantity: 69,
         description: "Displ trimalleol fx r low leg, subs for clos fx w nonunion",
-        shippinginfo: 11.53,
+        shippingInfo: 11.53,
         category: 4,
         price: 460.22
       }, {
@@ -211,7 +211,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/238x100.png/ff4444/ffffff",
         quantity: 5,
         description: "Stress fracture, unsp shoulder, subs for fx w malunion",
-        shippinginfo: 5.17,
+        shippingInfo: 5.17,
         category: 4,
         price: 2606.67
       }, {
@@ -220,7 +220,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/194x100.png/dddddd/000000",
         quantity: 90,
         description: "Food in trachea causing other injury",
-        shippinginfo: 2.93,
+        shippingInfo: 2.93,
         category: 8,
         price: 2517.79
       }, {
@@ -229,7 +229,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/160x100.png/dddddd/000000",
         quantity: 77,
         description: "Unsp traum nondisp spondylolysis of fifth cervcal vert, sqla",
-        shippinginfo: 3.20,
+        shippingInfo: 3.20,
         category: 5,
         price: 3371.62
       }, {
@@ -238,7 +238,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/118x100.png/5fa2dd/ffffff",
         quantity: 100,
         description: "Strain of musc/tend at lower leg level, left leg",
-        shippinginfo: 10.69,
+        shippingInfo: 10.69,
         category: 5,
         price: 534.56
       }, {
@@ -247,7 +247,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/168x100.png/dddddd/000000",
         quantity: 52,
         description: "Oth water transport accident w military wtrcrft, sequela",
-        shippinginfo: 7.48,
+        shippingInfo: 7.48,
         category: 5,
         price: 2056.22
       }, {
@@ -256,7 +256,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/240x100.png/5fa2dd/ffffff",
         quantity: 55,
         description: "Dislocation of unspecified interphalangeal joint of finger",
-        shippinginfo: 18.11,
+        shippingInfo: 18.11,
         category: 5,
         price: 3026.71
       }, {
@@ -265,7 +265,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/218x100.png/cc0000/ffffff",
         quantity: 59,
         description: "Other nondisp fx of lower end of left humerus, sequela",
-        shippinginfo: 6.05,
+        shippingInfo: 6.05,
         category: 5,
         price: 659.91
       }, {
@@ -274,7 +274,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/203x100.png/cc0000/ffffff",
         quantity: 53,
         description: "Animal-rider injured in collision with animal-drawn vehicle",
-        shippinginfo: 17.00,
+        shippingInfo: 17.00,
         category: 5,
         price: 3545.79
       }, {
@@ -283,7 +283,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/121x100.png/dddddd/000000",
         quantity: 35,
         description: "Drown due to fall/jump fr crushed inflatbl crft, sequela",
-        shippinginfo: 9.26,
+        shippingInfo: 9.26,
         category: 5,
         price: 2288.39
       }, {
@@ -292,7 +292,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/200x100.png/ff4444/ffffff",
         quantity: 66,
         description: "Complete lesion at unsp level of thoracic spinal cord, init",
-        shippinginfo: 17.03,
+        shippingInfo: 17.03,
         category: 5,
         price: 3652.94
       }, {
@@ -301,7 +301,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/139x100.png/ff4444/ffffff",
         quantity: 56,
         description: "Laceration with foreign body of wrist",
-        shippinginfo: 9.47,
+        shippingInfo: 9.47,
         category: 5,
         price: 106.25
       }, {
@@ -310,7 +310,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/221x100.png/5fa2dd/ffffff",
         quantity: 15,
         description: "Age-related cataract, morgagnian type, bilateral",
-        shippinginfo:18.60,
+        shippingInfo:18.60,
         category: 5,
         price: 3686.78
       }, {
@@ -319,7 +319,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/160x100.png/cc0000/ffffff",
         quantity: 77,
         description: "Sltr-haris Type I physl fx upr end humer, unsp arm, 7thK",
-        shippinginfo: 17.58,
+        shippingInfo: 17.58,
         category: 6,
         price: 2686.34
       }, {
@@ -328,7 +328,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/105x100.png/dddddd/000000",
         quantity: 97,
         description: "Unil post-trauma osteoarth of 1st carpometacarp jt, r hand",
-        shippinginfo: 5.54,
+        shippingInfo: 5.54,
         category: 6,
         price: 2778.13
       }, {
@@ -337,7 +337,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/162x100.png/dddddd/000000",
         quantity: 27,
         description: "Oth fracture of left acetabulum, subs for fx w nonunion",
-        shippinginfo: 9.41,
+        shippingInfo: 9.41,
         category: 6,
         price: 3679.06
       }, {
@@ -346,7 +346,7 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/196x100.png/dddddd/000000",
         quantity: 97,
         description: "Torus fx upper end of left fibula, subs for fx w nonunion",
-        shippinginfo: 21.65,
+        shippingInfo: 21.65,
         category: 6,
         price: 1597.42
       }, {
@@ -355,12 +355,12 @@ export const productsForPost =
         imageUrl: "http://dummyimage.com/146x100.png/ff4444/ffffff",
         quantity: 77,
         description: "Flexion deformity, finger joints",
-        shippinginfo: 14.53,
+        shippingInfo: 14.53,
         category: 7,
         price: 1036.77
       },
 ]
- export const userForPost=
+const userForPost=
 [{
     id: 1,
     fName: "Rogers",
@@ -713,7 +713,7 @@ export const productsForPost =
     zipcode: 59112
   },
 ]
-const seed = async()=>{
+seed = async()=>{
     try{
       await db.sync({force: true})
        await Categories.bulkCreate(categoriesForPost)

@@ -34,7 +34,7 @@ const Products = db.define('products', {
         notEmpty: true
       },
 
-     shippinginfo:{type: Sequelize.DECIMAL
+     shippingInfo:{type: Sequelize.DECIMAL
       , notNull: true,
        notEmpty: true
       },
