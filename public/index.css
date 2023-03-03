@@ -303,7 +303,7 @@ body{
 
 .category-box {
     width: 200px;
-    height: 200px;
+    height: 100px;
     background-color: #f5f5f5;
     border-radius: 5px;
     display: flex;
