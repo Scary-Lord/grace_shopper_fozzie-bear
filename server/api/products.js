@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-const Products = require('../db');
+const {Products} = require('../db');
 
 // GET route for all products
 router.get('/', async (req, res) => {
   try {
     const products = await Products.findAll({
-        
+
     });
-   
+
     res.json(products);
   } catch (err) {
     console.error(err);
