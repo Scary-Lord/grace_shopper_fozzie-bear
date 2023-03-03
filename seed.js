@@ -1,15 +1,11 @@
-const {db}= require('./server/db');
-const Cart = require('./server/db/cartModel');
-const Categories = require('./server/db/categoryModel');
-const Products= require('./server/db/productsModel');
-const Users = require('./server/db/usersModel');
+const {db, User, Categories, Products}= require('./server/db');
 
 
 
 // const cartForPost=[
 
 // ]
-const categoriesForPost=[
+export const categoriesForPost=[
     {
         id: 1,
         category: 'Samsung',
@@ -46,7 +42,7 @@ const categoriesForPost=[
         
       },
 ]
-const productsForPost =
+export const productsForPost =
 [{
         id: 1,
         name: 'Samsung Chromebook ',
@@ -364,7 +360,7 @@ const productsForPost =
         price: 1036.77
       },
 ]
-const userForPost=
+ export const userForPost=
 [{
     id: 1,
     fName: "Rogers",
@@ -720,10 +716,9 @@ const userForPost=
 const seed = async()=>{
     try{
       await db.sync({force: true})
-      // await Cart.bulkCreate(cartForPost)
        await Categories.bulkCreate(categoriesForPost)
        await Products.bulkCreate(productsForPost)
-       await Users.bulkCreate(userForPost)
+       await User.bulkCreate(userForPost)
        console.log('seeding successful')
     }
     catch(err){

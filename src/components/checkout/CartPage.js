@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import Navbar from '../Navbar/Navbar'
 import Footer from '../Footer/Footer'
 import { useDispatch, useSelector } from 'react-redux'
@@ -16,9 +18,9 @@ const CartPage = () => {
   const [state, setState] = useState('')
   const [zip, setZip] = useState('')
   
-  const totalPrice = (cart) => {
+  const totalPrice = () => {
     if(cart.length) {
-      cart.reduce((total, product) => {
+      return cart.reduce((total, product) => {
         return total += product.price
       }, 0)
     }

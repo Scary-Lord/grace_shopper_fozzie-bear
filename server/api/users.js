@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User: Users}=require("../db");
+const {User: Users, Cart} = require("../db");
 
 router.get('/', async (req, res, next) => {
     try {
@@ -14,7 +14,7 @@ router.get('/', async (req, res, next) => {
 })
 
 // GET /api/users/:userId
-router.get('/:userId', async (req, res, next) => {
+router.get('/:Id', async (req, res, next) => {
     try {
         const user = await Users.findByPk(req.params.userId)
         res.json(user)
@@ -25,7 +25,7 @@ router.get('/:userId', async (req, res, next) => {
 })
 
 // Post to add user /api/users/addUser
-router.post("/user/addUser", async (req,res,next)=>{
+router.post("/addUser", async (req,res,next)=>{
     try{
         res.status(201).send(await Users.create(req.body));
     } catch (error) {
@@ -34,8 +34,8 @@ router.post("/user/addUser", async (req,res,next)=>{
 
 })
 
-// post to add cart to user /api/users/addCart
-router.put("/user/:cart", async (req, res, next) => {
+// post to add cart to user /api/users/:userId/cart/:cartId
+router.put("/:Id/cart/:Id", async (req, res, next) => {
     try {
         const user = await Users.findByPk(req.params.userId)
         const cart = await Cart.findByPk(req.params.cartId)

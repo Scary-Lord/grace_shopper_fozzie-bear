@@ -48,3 +48,4 @@ router.delete('/:userId/:productId', async (req, res, next) => {
         next(err)
     }
 })
+module.exports = router;
