@@ -4,10 +4,10 @@ import Footer from './Footer'
 
 const Contact = () => {
   return (
-  <div>
+  <div className='contactPage'>
     <Navbar />
     <h1>Please fill out the form below to contact us via email</h1>
-    <form>
+    <form className='contactForm'>
       <label>Email:</label>
       <input name='email'/>
 

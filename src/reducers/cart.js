@@ -4,10 +4,6 @@ import axios from 'axios'
 export const getCart = createAsyncThunk('cart/getCart',
   async (userId) => {
 		try {
-			// generate random userId for guest checkout
-			if(!userId){
-				userId = Math.floor(Math.random() * 10000000)
-			}
 			const { data } = await axios.get(`/api/cart/${userId}`)
 			return data
 		} catch (err) {

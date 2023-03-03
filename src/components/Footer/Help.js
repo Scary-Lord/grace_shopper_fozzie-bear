@@ -4,10 +4,10 @@ import Footer from './Footer'
 
 const Help = () => {
   return (
-  <div>
+  <div className='helpPage'>
     <Navbar />
 		<h1>Please fill out the form below to get support via email</h1>
-    <form>
+    <form className='helpForm'>
       <label>Email:</label>
       <input name='email'/>
 
