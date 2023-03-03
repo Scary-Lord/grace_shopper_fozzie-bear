@@ -3,13 +3,13 @@ import React from 'react';
 import CategoryBoxes from './categoryboxes';
 import Footer from '../Footer/Footer'
 import Navbar from '../Navbar/Navbar';
-import Products from '../Products/Products';
+import Productlist from './productlist';
 
 const Homepage = () => {
   return (
     <div className="homepage">
       <Navbar />
-      <Products />
+      <Productlist />
       <CategoryBoxes />
       <Footer />
     </div>

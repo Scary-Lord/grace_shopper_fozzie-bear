@@ -108,14 +108,65 @@ body{
     color: rgb(116, 121, 57);
 }
 
+/* footer links */
 
+.contactPage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+}
 
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+}
 
+.helpPage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+}
 
+.helpForm {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+}
 
+/* cart page */
 
+.shippingInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 60%;
+    justify-content: center;
+    margin: auto;
+}
 
+.cartPage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+}
 
+.confirmationPage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
 
 
 /* mobile devices */
@@ -240,4 +291,62 @@ body{
     .footLink:hover{
         color: rgb(116, 121, 57);
     }
+}
+
+/* Homepage css stuff */
+
+.catagory-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.category-box {
+    width: 200px;
+    height: 200px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.category-box:hover {
+    transform: scale(1.1);
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.product-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.product:hover {
+    border-color: #333;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    transform: translateY(-5px);
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #f5f5f5;
+    height: 400px;
+}
+
+.product-image {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
