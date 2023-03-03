@@ -295,10 +295,16 @@ body{
 
 /* Homepage css stuff */
 
-.catagory-boxes {
+.category-boxes {
     display: flex;
     justify-content: space-around;
     margin-top: 50px;
+    color:rgb(43, 44, 28)
+}
+
+.category-boxes a {
+    text-decoration: none;
+    color: #000;
 }
 
 .category-box {

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const CategoryBoxes = () => {
     return (
-        <div className='catagory-boxes'>
+        <div className='category-boxes'>
             <Link to ="/products/monitors" className="category-box">
                 <h3>Monitors</h3>
             </Link>
