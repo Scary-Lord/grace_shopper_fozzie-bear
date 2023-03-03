@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Navbar from '../Navbar/Navbar'
 import Footer from '../Footer/Footer'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 import { removeFromCart, selectCart } from '../../reducers/cart'
 
 const CartPage = () => {
