@@ -16,18 +16,18 @@ export const fetchProductsAsync = createAsyncThunk(
 );
 
 // create an async thunk to fetch a product by ID
-export const fetchProductByIdAsync = createAsyncThunk(
-  "products/fetchProductById",
-  async (id) => {
-    const response = await axios.get(`/api/products/${id}`);
-    return response.data;
-  }
-);
+// export const fetchProductByIdAsync = createAsyncThunk(
+//   "products/fetchProductById",
+//   async (id) => {
+//     const response = await axios.get(`/api/products/${id}`);
+//     return response.data;
+//   }
+// );
 
 const initialState = [];
 
 const productSlice = createSlice({
-  name: "product",
+  name: "products",
   initialState,
   reducers: {
     // setSelectedProduct(state, action) {

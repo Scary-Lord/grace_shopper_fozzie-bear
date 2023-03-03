@@ -6,9 +6,7 @@ const {Products} = require('../db');
 // GET route for all products
 router.get('/', async (req, res) => {
   try {
-    const products = await Products.findAll({
-
-    });
+    const products = await Products.findAll({});
 
     res.json(products);
   } catch (err) {
@@ -18,14 +16,13 @@ router.get('/', async (req, res) => {
 });
 
 // GET route for one product
-router.get('/:id', async (req, res) => {
+router.get('/:productId', async (req, res) => {
   try {
-    const product = await Products.findById(req.params.id);
-    if (!product) {
-      return res.status(404).json({ message: 'Cannot find product' });
+    const product = await Products.find(
+      {where:{id:req.params.productId}});
+     res.json(product);
     }
-    res.json(product);
-  } catch (err) {
+   catch (err) {
     res.status(500).json({ message: err.message });
   }
 });

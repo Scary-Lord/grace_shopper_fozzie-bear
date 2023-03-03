@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react';
 import {  useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductByID } from "../reducers/product";
+import { fetchProductByIdAsync } from "../../reducers/singleProduct";
 
-const SingleProduct = () => {
+export const SingleProduct = () => {
   const{productid}= useParams();
-  const singleProduct = useSelector();
-    const { name, price,shipping, id, imageUrl, description } = singleProduct.info;
+  const singleProduct = useSelector(state=>state.singleProduct);
+  console.log(singleProduct)
+    const { name, price,shipping, id, imageUrl, description } = singleProduct;
 
    const dispatch = useDispatch();
 
-  useEffect(()=>{dispatch(fetchProductByID(productid))}, [dispatch]);
+  useEffect(()=>{dispatch(fetchProductByIdAsync(productid))}, [dispatch]);
   return (
      <div id="single-product" >
         <div className='column'>

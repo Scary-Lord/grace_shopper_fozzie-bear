@@ -9,6 +9,7 @@ import Products from "./Products/Products";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsAsync } from '../reducers/product';
 import { fetchUsersAsync } from '../reducers/users';
+import {SingleProduct} from '../components/Products/SingleProduct'
 
 function App() {
    const dispatch=useDispatch()
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path='/products' element={<Products/>}/>
+        <Route path="/products/:productsId/" element={<SingleProduct />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/help" element={<Help />} />
         <Route path="/cartPage" element={<CartPage />} />
