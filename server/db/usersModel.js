@@ -1,3 +1,4 @@
+
 const Sequelize = require('sequelize');
 const db = require('./_db');
 
@@ -43,9 +44,9 @@ const User = db.define('user', {
     },
     zipcode:{ type: Sequelize.INTEGER, validate:{ min:00000, max:99999}},
 
-    // orderhistory:{}  leaving blank for now. 
+   
 
-    
+  
 });
 
 module.exports = User;

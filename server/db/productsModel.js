@@ -1,6 +1,6 @@
 const Sequelize =require('sequelize');
 const db = require('./_db');
-const categoryModel = require('./categoryModel')
+const categories = require('./categoryModel')
 
 const Products = db.define('products', {
     id: { type: Sequelize.INTEGER,
@@ -39,18 +39,13 @@ const Products = db.define('products', {
        notEmpty: true 
       },
 
-    //  reviewRatings:{type: Sequelize.TEXT,
-    //    notNull: true,
-    //     notEmpty: true 
-    //   },
-
      category:{type: Sequelize.INTEGER,
        notNull: true,
         notEmpty: true,
         categoryId:{
         type:Sequelize.INTEGER,
           references: {
-            model: categoryModel,
+            model: categories,
             key:'id'
             // foreignKey:true
           }

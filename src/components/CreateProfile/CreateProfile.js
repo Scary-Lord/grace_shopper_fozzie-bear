@@ -1,9 +1,6 @@
-
-
-// import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {  useDispatch } from 'react-redux';
-// import {addUsers} from 'src/reducers/addUser.js';
+import { addUserAsync } from  '../../reducers/addUser';
 
 
 const CreateProfile = () => {
@@ -49,7 +46,18 @@ const CreateProfile = () => {
             <p>Zipcode</p>
             <input type="number" placeholder='Type Here' onChange={(event)=>{setZipcode(event.target.value)}}/>
             <div>
-              {/* <button onClick={()=>{dispatch(addUsers({id: studentList[studentList.length -1].id +1, firstName, lastName, username, email, address, city, state, zipcode }))}}>Submitt</button> */}
+            <button onClick={() => {
+  dispatch(addUserAsync({
+    firstName,
+    lastName,
+    username,
+    email,
+    address,
+    city,
+    state,
+    zipcode,
+  }));
+}}>Submit</button>
               {/* in this area i put all the data to be added when clicked and the in is going to be incremented by 1 everytime by adding 1 to  the last one */}
             </div>
 

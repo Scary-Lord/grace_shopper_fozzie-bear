@@ -1,29 +1,32 @@
 import React, { useEffect } from 'react';
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductByIdAsync } from "../../reducers/product";
 
 const ProductCard = () => {
-  const{productid}= useParams();
-  const singleProduct = useSelector();
-    const { name, price, id, imageUrl } = singleProduct.info;
+  const { productid } = useParams();
+  const singleProduct = useSelector(state => state.product.singleProduct);
+  const { name, price,  imageUrl } = singleProduct;
 
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  useEffect(()=>{dispatch(fetchProductByIdAsync(productid))});
+  useEffect(() => {
+    dispatch(fetchProductByIdAsync(productid))
+  }, [dispatch, productid]);
+
   return (
-     <div id="product-card" >
-        <div className='column'>
-          <div className="product-card-name" >
+    <div id="product-card">
+      <div className='column'>
+        <div className="product-card-name">
           <h1>{name}</h1>
-          </div>
-          <div className='product-card-image' >
-            <img src={`/${imageUrl}`} alt="Product" />
-          </div>
-          <div className='product-card-price'>
-          <h2>{price}</h2>
-          </div>
         </div>
+        <div className='product-card-image'>
+          <img src={`/${imageUrl}`} alt="Product" />
+        </div>
+        <div className='product-card-price'>
+          <h2>{price}</h2>
+        </div>
+      </div>
     </div>
   )
 }
