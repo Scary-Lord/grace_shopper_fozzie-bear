@@ -11,9 +11,8 @@ const Cart = db.define('cart',{
       key: 'id'
     }
   },
-  products: {
+  productsId: {
     type: Sequelize.INTEGER,
-    defaultValue: [],
     references: {
       model: Products,
 			key: 'id'
