@@ -22,8 +22,8 @@ const Navbar = () => {
     
 
     <li className='navitems'>
-      <Link className='Anchors' to={'/'}> Log in </Link>/
-      <Link className='Anchors' to={'/user/addUser'}> Sign Up </Link>
+      <Link className='Anchors' to={'/sign_in'}> Log in </Link>/
+      <Link className='Anchors' to={'/createProfile'}> Sign Up </Link>
     </li>
 
     <li className='navitems'><Link className='Anchors' to={'/cartPage'}><img className='navcartimg' src={"https://img.myloview.com/stickers/shopping-cart-icon-isolated-on-dark-background-400-253477467.jpg"} alt="cart"></img></Link> </li>

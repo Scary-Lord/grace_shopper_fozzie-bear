@@ -1,69 +1,120 @@
 import React, { useState } from 'react';
-import {  useDispatch } from 'react-redux';
-import { addUserAsync } from  '../../reducers/addUser';
+import axios from 'axios';
+import { Link} from 'react-router-dom';
 
 
-const CreateProfile = () => {
-  const dispatch = useDispatch();
- 
-    const [firstName, setFirstName]=useState('');
-    const [lastName, setLastName]=useState('');
-    const [username, setUsername]=useState('');
-    const [email, setEmail]=useState('');
-    const [address, setAddress]=useState('');
-    const [city, setCity]=useState('');
-    const [state, setState]=useState('');
-    const [zipcode, setZipcode]=useState('');
+
+
+function CreateProfile() {
+  const [fName, setFName] = useState('');
+  const [lName, setLName] = useState('');
+  const [username, setUsername] = useState('');
+  const [address, setAddress] = useState('');
+  const [password, setPassword]= useState('');
+  const [rePassword, setRePassword]= useState('');
+  const [email, setEmail] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+  const [zipcode, setZipcode] = useState('');
+  
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = {
+      fName: fName,
+      lName: lName,
+      username: username,
+      password:password,
+      address: address,
+      email: email,
+      city: city,
+      state: state,
+      zipcode: zipcode,
+    };
+    axios.post('/api/users/addUsers', formData)
+      .then(response => {
+        console.log('User created:', response.data);
+        // handle success response here
+      })
+      .catch(error => {
+        
+        console.error('Error creating user:', error);
+        // handle error response here
+      });
+      
+        // if(!fName || !lName || !username || !password || !address || !email || !city || !state || !zipcode) 
+    
+      // const timeoutId = setTimeout(() => {
+      //   window.location.href = "/sign_in";
+      // }, 1000);
+         
+      
+  };
 
   return (
-    
-    <div>
+    <div className='createactdiv'>
+      <div className='formcreate'>
+    <form  onSubmit={handleSubmit}>
+      
+    <Link className='createlinks' to={'/'}>🔙Store</Link>
+
+      <h1 className='createhappy'> Create Acount</h1>
+
         <div>
-          <h2>Create your account</h2>
-
-          <p>First Name</p>
-            <input type="text" placeholder='First Name' onChange={(event)=>{setFirstName(event.target.value)}}/>
-            
-            <p>Last Name</p>
-            <input type="text" placeholder='Type Here' onChange={(event)=>{setLastName(event.target.value)}}/>
-
-            <p>Username</p>
-            <input type="text" placeholder='Type Here' onChange={(event)=>{setUsername(event.target.value)}}/>
-          
-            <p>Email</p>
-            <input type="text" placeholder='Type Here' onChange={(event)=>{setEmail(event.target.value)}}/>
-
-            <p>Address</p>
-            <input type="text" placeholder='Type Here' onChange={(event)=>{setAddress(event.target.value)}}/>
-
-            <p>City</p>
-            <input type="text" placeholder='Type Here' onChange={(event)=>{setCity(event.target.value)}}/>
-
-            <p>State</p>
-            <input type="text" placeholder='Type Here' onChange={(event)=>{setState(event.target.value)}}/>
-            
-          
-            <p>Zipcode</p>
-            <input type="number" placeholder='Type Here' onChange={(event)=>{setZipcode(event.target.value)}}/>
-            <div>
-            <button onClick={() => {
-  dispatch(addUserAsync({
-    firstName,
-    lastName,
-    username,
-    email,
-    address,
-    city,
-    state,
-    zipcode,
-  }));
-}}>Submit</button>
-              {/* in this area i put all the data to be added when clicked and the in is going to be incremented by 1 everytime by adding 1 to  the last one */}
-            </div>
-
+        <input className='inputcreateact clear' type="text" placeholder='First name' value={fName} onChange={(e) => setFName(e.target.value)} />
         </div>
+
+       <div>
+        <input className='inputcreateact clear' type="text" placeholder='Last name' value={lName} onChange={(e) => setLName(e.target.value)} />
+        </div>
+
+        <div>
+        <input className='inputcreateact clear' type="text" placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value) } />
+        </div>
+      
+        <div>
+        <input className='inputcreateact clear' type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
+        
+        <div>
+        <input className='inputcreateact clear' type="password" placeholder='Re-enter password' value={rePassword} onChange={(e) => setRePassword(e.target.value)} />
+        </div>
+
+        <div>
+        <input className='inputcreateact clear' type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
+      
+     
+        <div>
+        <input className='inputcreateact clear' type="text" placeholder='Address' value={address} onChange={(e) => setAddress(e.target.value)} />
+        </div>
+
+        
+        <div>
+        <input className='inputcreateact clear' type="text" placeholder='city' value={city} onChange={(e) => setCity(e.target.value)} />
+        </div>
+     
+        <div>
+        <input className='inputcreateact clear' type="text" placeholder='State' value={state} onChange={(e) => setState(e.target.value)} />
+        </div>
+      
+        <div>
+        <input className='inputcreateact clear' type="number" placeholder='Zip code ex:12345' value={zipcode} onChange={(e) => setZipcode(e.target.value)} />
+        </div>
+      
+      <button className='inputcreateact' type="submit">Create User</button>
+      <p>Already have a Account? <Link className='createlinks' to='/sign_in'>🔒Log in</Link></p>
+     
+    </form>
+    
     </div>
-  )
+    <div>
+      <p className='emojicreate'>🥰</p>
+      <p className='createhappy'> We Are So happy that<br/> you chose us for your <br/>purshases</p>
+    </div>
+     </div>
+  
+  );
 }
 
-export default CreateProfile
+export default CreateProfile;
