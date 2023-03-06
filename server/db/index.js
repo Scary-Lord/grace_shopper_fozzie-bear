@@ -10,7 +10,7 @@ User.hasOne(Cart, { foreignKey: 'userId' })
 
 // cart associations
 Cart.belongsTo(User, { foreignKey: 'userId' })
-// Cart.hasMany(Products)
+Cart.hasMany(Products)
 
 // category associations
 // Products.belongsTo(Categories, { foreignKey: 'categoryId' })

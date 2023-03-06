@@ -1,6 +1,5 @@
 const Sequelize =require('sequelize');
 const db = require('./_db');
-const categories = require('./categoryModel');
 const Categories = require('./categoryModel');
 
 const Products = db.define('products', {
@@ -40,6 +39,13 @@ const Products = db.define('products', {
        notEmpty: true
       },
     
+      categoryId: {
+        type: Sequelize.INTEGER,
+        // references: {
+        //   model: Categories,
+        //   key: 'id'
+        // }
+      }
 })
 
 module.exports  = Products;
