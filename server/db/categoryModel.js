@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('./_db');
-
+const Products = require('./productsModel')
 
 const Categories = db.define('categories',{
   id:{
@@ -12,7 +12,14 @@ const Categories = db.define('categories',{
   category:{
     type: Sequelize.STRING,
     allowNull: false
-  }
+  },
+  // productId: {
+  //   type: Sequelize.INTEGER,
+  //   references: {
+  //     model: Products,
+  //     key: 'id'
+  //   }
+  // }
 })
 
 module.exports = Categories;

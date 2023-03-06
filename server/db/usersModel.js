@@ -55,4 +55,8 @@ const User = db.define('user', {
         
 });
 
+User.afterCreate(async user => {
+    await user.createCart({ userId: user.id })
+})
+
 module.exports = User;
