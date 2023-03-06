@@ -11,14 +11,14 @@ const Cart = db.define('cart',{
       key: 'id'
     }
   },
-  // products: {
-  //   type: Sequelize.ARRAY(Sequelize.INTEGER),
-  //   defaultValue: [],
-  //   references: {
-  //     model: Products,
-	// 		key: 'id'
-  //   }
-  // }
+  products: {
+    type: Sequelize.ARRAY(Sequelize.INTEGER),
+    defaultValue: [],
+    references: {
+      model: Products,
+			key: 'id'
+    }
+  }
 })
 
 module.exports = Cart
