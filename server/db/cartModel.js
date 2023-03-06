@@ -12,7 +12,7 @@ const Cart = db.define('cart',{
     }
   },
   products: {
-    type: Sequelize.ARRAY(Sequelize.INTEGER),
+    type: Sequelize.INTEGER,
     defaultValue: [],
     references: {
       model: Products,
