@@ -11,8 +11,9 @@ export const SingleProduct = () => {
   const{id}= useParams();
 
   const singleProduct = useSelector(selectProduct);
-  // console.log(singleProduct)
+
     const { name, price,shipping, imageUrl, description } = singleProduct;
+    console.log(imageUrl)
 
    const dispatch = useDispatch();
 
@@ -26,7 +27,7 @@ export const SingleProduct = () => {
           <h1>{name}</h1>
           </div>
           <div className='product-image' >
-            <img src={`/${imageUrl}`} alt="Product" />
+            <img src={imageUrl} alt="Product" width='400' height='450'/>
           </div>
           <div className='product-price'>
           <h2>{`$ ${price}`}</h2>

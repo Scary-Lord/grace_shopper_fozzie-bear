@@ -12,8 +12,9 @@ const Products = () => {
     <div>
       <Navbar/>
     <div className='product-page'>{products ? products.map((item) => (
-      <NavLink to={`/products/${item.id}`}>
-      <div className='product-card'>
+      <NavLink to={`/products/${item.id}`}
+      key={item.id}>
+      <div className='product-card' >
       <img src={item.imageUrl} alt={item.name} width='150' height='150'></img>
       <h1>{item.name}</h1>
 

@@ -1,6 +1,6 @@
 const Sequelize =require('sequelize');
 const db = require('./_db');
-const categories = require('./categoryModel')
+const Categories = require('./categoryModel')
 
 const Products = db.define('products', {
     id: { type: Sequelize.INTEGER,
@@ -45,7 +45,7 @@ const Products = db.define('products', {
     //     categoryId:{
     //     type:Sequelize.INTEGER,
     //       references: {
-    //         model: categories,
+    //         model: Categories,
     //         key:'id'
     //         // foreignKey:true
     //       }
