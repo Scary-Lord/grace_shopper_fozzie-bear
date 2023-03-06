@@ -7,6 +7,7 @@ const User = db.define('user', {
         primaryKey:true,
         type:Sequelize.INTEGER,
         unique:true,
+        autoIncrement: true,
         allowNull:false,
     },
     fName: {
@@ -24,13 +25,20 @@ const User = db.define('user', {
         allowNull: false,
         unique: true
     },
-    address: {
+    password:{
         type: Sequelize.STRING,
         allowNull: false,
         unique: false
     },
+    
     email:{ type: Sequelize.STRING, allowNull: false, notEmpty: true,  
         validate:{isEmail: true} },
+    
+        address: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            unique: false
+        },
 
     city:{
         type: Sequelize.STRING,

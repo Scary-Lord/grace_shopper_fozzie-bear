@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsAsync } from '../reducers/product';
 import { fetchUsersAsync } from '../reducers/users';
 import {SingleProduct} from '../components/Products/SingleProduct'
+import SignIn from './CreateProfile/sign_in';
 
 function App() {
    const dispatch=useDispatch()
@@ -28,7 +29,8 @@ function App() {
         <Route path="/help" element={<Help />} />
         <Route path="/cartPage" element={<CartPage />} />
         <Route path="/confirmation" element={<Confirmation />} />
-        <Route path='/user/addUser' element={<CreateProfile />} />
+        <Route path='/createProfile' element={<CreateProfile />} />
+        <Route path='/sign_in' element={<SignIn/>}/>
       </Routes>
 
 
