@@ -1,6 +1,7 @@
 const Sequelize =require('sequelize');
 const db = require('./_db');
-const categories = require('./categoryModel')
+const categories = require('./categoryModel');
+const Categories = require('./categoryModel');
 
 const Products = db.define('products', {
     id: { type: Sequelize.INTEGER,
@@ -38,19 +39,7 @@ const Products = db.define('products', {
       , notNull: true,
        notEmpty: true
       },
-
-    //  category:{type: Sequelize.INTEGER,
-    //    notNull: true,
-    //     notEmpty: true,
-    //     categoryId:{
-    //     type:Sequelize.INTEGER,
-    //       references: {
-    //         model: categories,
-    //         key:'id'
-    //         // foreignKey:true
-    //       }
-    //     }
-    //   }
+    
 })
 
 module.exports  = Products;
