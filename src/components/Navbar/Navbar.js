@@ -19,7 +19,7 @@ const Navbar = () => {
     <li className='navitems'><Link className='Anchors' to={'/'}>Home</Link> </li>
     <li className='navitems'><Link className='Anchors' to={'/products'}>Products</Link> </li>
 
-     <li className='navitems'><button onClick={OpenCat}>Categories</button></li>
+     <li className='navitems' onClick={OpenCat}><p>Categories</p></li>
 
 
     <li className='navitems'>
