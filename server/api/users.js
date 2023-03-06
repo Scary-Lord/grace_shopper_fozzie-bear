@@ -2,6 +2,7 @@ const router = require('express').Router();
 const {User: Users, Cart} = require("../db");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+const jwt = require('jsonwebtoken');
 
 
 
@@ -95,5 +96,42 @@ router.put("/:Id/cart/:Id", async (req, res, next) => {
         next(error)
     }
 })
+router.post('/login', async (req, res, next) => {
+    const { username, password } = req.body;
+  
+    if (!username || !password) {
+        return res.status(400).json({ error: 'Username and password are required' });
+    }
+    
+    try {
+         // Check if the username and password are correct
+    const { username, password } = req.body;
+      const user = await Users.findOne({ where: { username } });
+      if (!user) {
+        return res.status(401).json({ error: 'Invalid username or password' });
+      }
+  
+      const match = await bcrypt.compare(password, user.password);
+      if (!match) {
+        return res.status(401).json({ error: 'Invalid username or password' });
+      }
+      
+      // Generate an access Token for user
+        const accessToken = jwt.sign({ id: user.id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '15m' });
+     
+     // generate a refresh token for user
+        const refreshToken = jwt.sign({ id: user.id }, process.env.REFRESH_TOKEN_SECRET);
+
+     // Verify an Access Token and extract the user ID
+        const verified = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
+        const id = verified.id;
+    
+      res.json({ token, message: 'Login successful' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+  
 
 module.exports = router;

@@ -14,6 +14,19 @@ export const fetchUsersAsync = createAsyncThunk("allUsers", async () => {
     }
 });
 
+export const login = (username, password) => async (dispatch) => {
+    dispatch();
+  
+    try {
+      const response = await axios.post('/api/users/login', { username, password });
+      const token = response.data.token;
+      dispatch({ payload: { token } });
+    } catch (error) {
+      dispatch({  payload: { error: error.response.data.error } });
+    }
+  };
+  
+
 export const fetchUserByID = (id) => async (dispatch) => {
   try {
     const { data } = await axios.get(`/api/users/${id}`);
