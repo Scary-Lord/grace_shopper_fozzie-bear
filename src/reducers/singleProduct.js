@@ -4,8 +4,8 @@ import axios from "axios";
 export const fetchProductByIdAsync = createAsyncThunk(
   "products/fetchProductById",
   async (id) => {
+console.log(id)
     try{const {data} = await axios.get(`/api/products/${id}`);
-    console.log(data)
     return data;
   }catch(err){
     console.log(err)
@@ -26,6 +26,6 @@ const singleProductSlice =createSlice({
   }
 })
 
-export const {setSelectedProduct }= singleProductSlice.actions;
+export const selectProduct = (state)=>{ return state.singleProduct;};
 
 export default singleProductSlice.reducer;

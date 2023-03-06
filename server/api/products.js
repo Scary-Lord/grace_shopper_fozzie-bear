@@ -16,10 +16,11 @@ router.get('/', async (req, res) => {
 });
 
 // GET route for one product
-router.get('/:productId', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
-    const product = await Products.find(
-      {where:{id:req.params.productId}});
+    console.log(req.params.id)
+    const product = await Products.findOne({where:{id:req.params.id}}
+      );
      res.json(product);
     }
    catch (err) {

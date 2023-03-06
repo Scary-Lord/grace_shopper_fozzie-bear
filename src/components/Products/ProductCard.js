@@ -1,18 +1,16 @@
 import React, { useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductByIdAsync } from "../../reducers/singleProduct";
+import { fetchProductByIdAsync, selectProduct } from "../../reducers/singleProduct";
 
 const ProductCard = () => {
-  const { productid } = useParams();
-  const singleProduct = useSelector(state => state.singleProduct);
+  const{id}= useParams();
+  const singleProduct = useSelector(selectProduct);
   const { name, price,  imageUrl } = singleProduct;
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchProductByIdAsync(productid))
-  }, [dispatch, productid]);
+  useEffect(()=>{dispatch(fetchProductByIdAsync(id))}, [dispatch,id]);
 
   return (
     <div id="product-card">
