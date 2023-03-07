@@ -1,6 +1,8 @@
 import React, { useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Cookies from 'js-cookie';
+
 
 
 const SignIn = () => {
@@ -8,33 +10,51 @@ const SignIn = () => {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [user, setUser] = useState(null);
+  const [profileError, setProfileError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/users/login', { username, password });
       const token = response.data.token;
-      localStorage.setItem('token', token);
+      Cookies.set('accessToken', token);
       console.log(token);
     } catch (error) {
       setErrorMessage(error.response.data.error);
     }
   };
 
-  useEffect(() => {
-    // make an API call to get the user information
-  axios.get('/api/users/profile', {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    }
-  })
-    .then(response => {
-      setUser(response.data);
-    })
-    .catch(error => {
-      console.error(error);
-    });
-}, []);
+  // useEffect(() => {
+  //   // make an API call to get the user information
+  //   axios.get('/api/users/profile', {
+  //     headers: {
+  //       Authorization: `Bearer ${localStorage.getItem('accessToken')}`
+  //     }
+  //   })
+  //     .then(response => {
+  //       setUser(response.data);
+  //     })
+  //     .catch(error => {
+  //       console.error(error);
+  //       setProfileError(error.message);
+  //     });
+  // }, []);
+
+  // const getUserInformation = async () => {
+  //   try {
+  //     const response = await axios.get('/api/users/profile', {
+  //       headers: {
+  //         Authorization: `Bearer ${localStorage.getItem('accessToken')}`
+  //       }
+  //     });
+  
+  //     // Return the user information from the response data
+  //     return response.data;
+  //   } catch (error) {
+  //     console.error(error);
+  //     setProfileError(error.message);
+  //   }
+  // };
 
 //     const [username, setUsername]= useState('');
     
@@ -67,6 +87,7 @@ const SignIn = () => {
         <button  className='signinarea'  type="submit">Sign in</button>
         <p>Dont have an account with us?<Link className='createlinks' to={'/createProfile'}> 🔒Sign Up </Link></p>
         {errorMessage && <div>{errorMessage}</div>}
+        {profileError && <div>{profileError}</div>}
     </div>
       )}
         
