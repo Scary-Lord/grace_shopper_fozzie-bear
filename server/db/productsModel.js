@@ -39,18 +39,18 @@ const Products = db.define('products', {
        notEmpty: true
       },
 
-    //  category:{type: Sequelize.INTEGER,
-    //    notNull: true,
-    //     notEmpty: true,
-    //     categoryId:{
-    //     type:Sequelize.INTEGER,
-    //       references: {
-    //         model: Categories,
-    //         key:'id'
-    //         // foreignKey:true
-    //       }
-    //     }
-    //   }
+     category:{type: Sequelize.INTEGER,
+       notNull: true,
+        notEmpty: true,
+        categoryId:{
+        type:Sequelize.INTEGER,
+          references: {
+            model: Categories,
+            key:'id'
+            // foreignKey:true
+          }
+        }
+      }
 })
 
 module.exports  = Products;

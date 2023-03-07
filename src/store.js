@@ -4,13 +4,16 @@ import productReducer from './reducers/product'
 import cartReducer from './reducers/cart'
 import singleProductReducer from './reducers/singleProduct'
 import keyboardReducer from './reducers/keyboard'
+import currentUserReducer
+ from "./reducers/currentUser";
 const store = configureStore({
     reducer:{
         products:productReducer,
         users: usersReducer,
         cart: cartReducer,
         singleProduct:singleProductReducer,
-        keyboard:keyboardReducer
+        keyboard:keyboardReducer,
+        currentUser:currentUserReducer,
 
     }
 })

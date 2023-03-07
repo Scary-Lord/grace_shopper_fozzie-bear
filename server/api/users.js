@@ -45,9 +45,9 @@ const hashPasswordMiddleware = async (req, res, next) => {
       res.status(500).json({ error: 'Internal server error' });
     }
   }
-  
+
   // Apply the middleware to all relevant routes
-  router.post("/addUsers", hashPasswordMiddleware,hashUsernameMiddleware,hashAddressMiddleware, async (req, res, next) => {
+  router.post("/addUsers", hashPasswordMiddleware,hashAddressMiddleware, async (req, res, next) => {
     try {
       const user = await Users.create(req.body);
       res.json(user);
@@ -60,7 +60,7 @@ const hashPasswordMiddleware = async (req, res, next) => {
   router.get('/', async (req, res, next) => {
     try {
         const users = await Users.findAll({
-            
+
         })
         res.json(users)
     }
@@ -74,6 +74,20 @@ const hashPasswordMiddleware = async (req, res, next) => {
 router.get('/:Id', async (req, res, next) => {
     try {
         const user = await Users.findByPk(req.params.Id)
+        res.json(user)
+    }
+    catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+      }
+})
+
+router.get('/username/:username', async (req, res, next) => {
+    try {
+        console.log(req.params.username)
+        const user = await Users.findOne({where:{
+          username:req.params.username
+        }})
         res.json(user)
     }
     catch (error) {
