@@ -1,18 +1,10 @@
 import { React } from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useEffect, useDispatch } from "react-redux";
-import { fetchKeyboardAsync } from "../../reducers/keyboard";
+import { useSelector } from "react-redux";
 
 const KeyboardList = () => {
-    const dispatch = useDispatch();
     const products = useSelector(state => state.products);
-    const keyboards = products.filter(product => product.category === 'keyboard')
-
-    useEffect(() => {
-        dispatch(fetchKeyboardAsync());
-    }, [dispatch]);
-    console.log("Keyboards:", keyboards)
-
+    const keyboards = products.filter(product => product.category === 'keyboards')
     return (
         <div className='keyboard-list'>
             {keyboards.map((keyboard) => (

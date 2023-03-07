@@ -1,21 +1,21 @@
+// keyboard router
 const express = require('express');
 const router = express.Router();
 const { Products } = require('../db/models')
 
 // GET route for all keyboards
-router.get('/', async (req, res) => {
+router.get('/keyboard',async (req, res) => {
     try {
         const keyboards = await Products.findAll({
             where: {
                 category: 'keyboard'
-            }
-        });
-        console.log("Keyboards:", keyboards)
+    }
+});
         res.json(keyboards);
-    } catch (err) {
+} catch (err) {
         console.error(err);
         res.status(500).json({ message: err.message });
-    }
+}
 });
 
 // GET route for one keyboard

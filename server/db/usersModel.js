@@ -52,7 +52,9 @@ const User = db.define('user', {
     },
     zipcode:{ type: Sequelize.INTEGER, validate:{ min:00000, max:99999}},
 
-        
+   
+
+  
 });
 
 User.afterCreate(async user => {
