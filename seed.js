@@ -1,4 +1,4 @@
-const {db,  Categories, Products}= require('./server/db');
+const {db,  Categories, Products, User}= require('./server/db');
 
 
 
@@ -361,11 +361,22 @@ const {db,  Categories, Products}= require('./server/db');
       },
 ]
 
-seed = async()=>{
+const seed = async()=>{
     try{
       await db.sync({force: true})
        await Categories.bulkCreate(categoriesForPost)
        await Products.bulkCreate(productsForPost)
+       await User.create({
+        fName: 'First',
+        lName: 'Last',
+        username: 'user',
+        password: 'password',
+        email: 'mail@mail.com',
+        address: '123 Street',
+        city: 'City',
+        state: 'State',
+        zipcode: 12345
+       })
        
        console.log('seeding successful')
     }
