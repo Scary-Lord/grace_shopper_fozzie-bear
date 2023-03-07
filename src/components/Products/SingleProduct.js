@@ -5,12 +5,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductByIdAsync, selectProduct } from "../../reducers/singleProduct";
 import Navbar from '../Navbar/Navbar';
 import { Footer } from '../Footer';
+import { addToCart } from '../../reducers/cart';
 
 export const SingleProduct = () => {
 
   const{id}= useParams();
 
   const singleProduct = useSelector(selectProduct);
+
+  const users = useSelector(state => state.users)
+  const user = users[0]
 
     const { name, price,shipping, imageUrl, description } = singleProduct;
     console.log(imageUrl)
@@ -36,7 +40,11 @@ export const SingleProduct = () => {
           <p>{description}</p>
           </div>
           <div className='add-to-cart-button'>
-          <h3>Add To Cart</h3>
+          <h3 onClick={ () => {
+            console.log(`UserId: ${user.id}`)
+            console.log(`ProductId: ${id}`)
+            dispatch( addToCart( 1, 2 ) )
+            } }>Add To Cart</h3>
           </div>
         </div>
     </div>

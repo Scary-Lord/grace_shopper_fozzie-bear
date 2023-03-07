@@ -28,7 +28,7 @@ router.post('/:userId', async (req, res, next) => {
 // add a product to the cart
 router.put('/:userId/:productId', async (req, res, next) => {
     try {
-        const cart = await Cart.findOne({where: {user: req.params.userId}})
+        const cart = await Cart.findOne({where: {userId: req.params.userId}})
         const product = await Products.findByPk(req.params.productId)
         // sequelize magic method for adding a product to the cart found via the userId
         await cart.addProducts(product)

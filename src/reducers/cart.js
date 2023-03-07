@@ -13,9 +13,10 @@ export const getCart = createAsyncThunk('cart/getCart',
 )
 
 export const addToCart = createAsyncThunk('cart/addToCart',
-	async ({ userId, product }) => {
+	async ({ userId, productId }) => {
 		try {
-			const { data } = await axios.put(`/api/cart/${userId}/${product}`)
+			console.log(`/api/cart/${userId}/${productId}`)
+			const { data } = await axios.put(`/api/cart/${userId}/${productId}`)
 			return data
 		} catch (err) {
 			console.log(err)
