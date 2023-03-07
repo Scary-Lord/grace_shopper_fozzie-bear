@@ -22,7 +22,26 @@ const SignIn = () => {
     } catch (error) {
       setErrorMessage(error.response.data.error);
     }
+
+    const getUserInformation = async () => {
+      try {
+        const response = await axios.get('/api/users/profile', {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('accessToken')}`
+          }
+        });
+    
+        // Return the user information from the response data
+        return response.data;
+      } catch (error) {
+        console.error(error);
+        setProfileError(error.message);
+      }
+    };
+
+    
   };
+
 
   // useEffect(() => {
   //   // make an API call to get the user information
@@ -39,22 +58,9 @@ const SignIn = () => {
   //       setProfileError(error.message);
   //     });
   // }, []);
+ 
 
-  // const getUserInformation = async () => {
-  //   try {
-  //     const response = await axios.get('/api/users/profile', {
-  //       headers: {
-  //         Authorization: `Bearer ${localStorage.getItem('accessToken')}`
-  //       }
-  //     });
   
-  //     // Return the user information from the response data
-  //     return response.data;
-  //   } catch (error) {
-  //     console.error(error);
-  //     setProfileError(error.message);
-  //   }
-  // };
 
 //     const [username, setUsername]= useState('');
     
