@@ -43,6 +43,7 @@ export const SingleProduct = () => {
             // console.log(`UserId: ${user.id}`)
             // console.log(`ProductId: ${id}`)
             dispatch( addToCart({ userId: user.id, productId: id }) )
+            alert('Item added to cart!')
             } }>Add To Cart</h3>
           </div>
         </div>
