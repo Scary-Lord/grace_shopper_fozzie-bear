@@ -1,8 +1,10 @@
+require("dotenv").config();
 const router = require('express').Router();
 const {User: Users, Cart} = require("../db");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const jwt = require('jsonwebtoken');
+
 
 
 
@@ -48,7 +50,8 @@ const hashPasswordMiddleware = async (req, res, next) => {
   }
   
   // Apply the middleware to all relevant routes
-  router.post("/addUsers", hashPasswordMiddleware,hashUsernameMiddleware,hashAddressMiddleware, async (req, res, next) => {
+  router.post("/addUsers", hashPasswordMiddleware,//hashUsernameMiddleware,hashAddressMiddleware
+   async (req, res, next) => {
     try {
       const user = await Users.create(req.body);
       res.json(user);
@@ -105,10 +108,10 @@ router.post('/login', async (req, res, next) => {
     
     try {
          // Check if the username and password are correct
-    const { username, password } = req.body;
+    
       const user = await Users.findOne({ where: { username } });
       if (!user) {
-        return res.status(401).json({ error: 'Invalid username or password' });
+        return res.status(401).json({ error: 'Invalid password' });
       }
   
       const match = await bcrypt.compare(password, user.password);
@@ -118,20 +121,54 @@ router.post('/login', async (req, res, next) => {
       
       // Generate an access Token for user
         const accessToken = jwt.sign({ id: user.id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '15m' });
+        console.log(process.env.ACCESS_TOKEN_SECRET);
      
      // generate a refresh token for user
         const refreshToken = jwt.sign({ id: user.id }, process.env.REFRESH_TOKEN_SECRET);
+        console.log(  process.env.REFRESH_TOKEN_SECRET);
 
-     // Verify an Access Token and extract the user ID
-        const verified = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
-        const id = verified.id;
+    //  // Verify an Access Token and extract the user ID
+    //     const verified = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
+    //     const id = verified.id;
     
-      res.json({ token, message: 'Login successful' });
+      res.json({ accessToken, refreshToken});
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Internal server error' });
     }
   });
+
+  // Middleware to verify the access token
+function authenticateToken(req, res, next) {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
   
+    if (!token) {
+      return res.status(401).json({ error: 'Access token is required' });
+    }
+  
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+      if (err) {
+        return res.status(403).json({ error: 'Access token is invalid or has expired' });
+      }
+    req.user = user;
+    next();
+  });
+}
+
+// Get a user's profile
+router.get('/profile', authenticateToken, async (req, res, next) => {
+  // res.json(Users.filter (prof=> prof.user=== req.user.name))
+  try {
+    const user = await Users.findByPk(req.username.id);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json(user);
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = router;
