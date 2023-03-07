@@ -3,6 +3,7 @@ const User = require('./usersModel');
 const Categories  = require('./categoryModel');
 const Products  = require('./productsModel');
 const Cart  = require('./cartModel');
+const UserCart = require('./userCartModel')
 //place relations here
 
 // user associations
@@ -10,7 +11,8 @@ User.hasOne(Cart, { foreignKey: 'userId' })
 
 // cart associations
 Cart.belongsTo(User, { foreignKey: 'userId' })
-Cart.hasMany(Products)
+Cart.belongsToMany(Products, { through: UserCart })
+Products.belongsToMany(Cart, { through: UserCart })
 
 // category associations
 // Products.belongsTo(Categories, { foreignKey: 'categoryId' })
@@ -21,5 +23,6 @@ module.exports = {
     User,
     Categories,
     Products,
-    Cart
+    Cart,
+    UserCart
 }

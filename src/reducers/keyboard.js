@@ -2,10 +2,10 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchKeyboardAsync = createAsyncThunk(
-    "keyboard",
-    async (category) => {
+    "keyboard/fetchKeyboard",
+    async () => {
         try {
-            const { data } = await axios.get(`/api/${category}`);
+            const { data } = await axios.get(`/api/products/keyboards`);
             return data;
         } catch (err) {
             console.log(err)
