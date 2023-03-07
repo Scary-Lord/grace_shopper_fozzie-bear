@@ -1,6 +1,6 @@
 const router = require('express').Router()
-const Cart = require('../db')
-const Products = require('../db')
+const {Cart} = require('../db')
+const {Products} = require('../db')
 
 // get the cart by the userID
 router.get('/:userId', async (req, res, next) => {

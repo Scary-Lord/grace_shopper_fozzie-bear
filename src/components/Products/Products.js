@@ -7,7 +7,6 @@ import Footer from '../Footer/Footer';
 
 const Products = () => {
     const products = useSelector(state => state.products);
-  console.log(products.length)
   return (
     <div>
       <Navbar/>

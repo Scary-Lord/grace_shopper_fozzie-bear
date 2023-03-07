@@ -17,7 +17,6 @@ export const SingleProduct = () => {
   const user = users[0]
 
     const { name, price,shipping, imageUrl, description } = singleProduct;
-    console.log(imageUrl)
 
    const dispatch = useDispatch();
 
@@ -41,9 +40,9 @@ export const SingleProduct = () => {
           </div>
           <div className='add-to-cart-button'>
           <h3 onClick={ () => {
-            console.log(`UserId: ${user.id}`)
-            console.log(`ProductId: ${id}`)
-            dispatch( addToCart( 1, 2 ) )
+            // console.log(`UserId: ${user.id}`)
+            // console.log(`ProductId: ${id}`)
+            dispatch( addToCart({ userId: user.id, productId: id }) )
             } }>Add To Cart</h3>
           </div>
         </div>
