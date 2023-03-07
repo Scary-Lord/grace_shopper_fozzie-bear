@@ -41,7 +41,8 @@ router.put('/:userId/:productId', async (req, res, next) => {
 // delete a product from the user's cart
 router.delete('/:userId/:productId', async (req, res, next) => {
     try {
-        const cart = await Cart.findOne({where: {user: req.params.userId}})
+        const cart = await UserCart.findOne({
+            where: {cartId: req.params.userId, productId: req.params.productId}})
         const product = await Products.findByPk(req.params.productId)
         // sequelize magic method for removing a product from the user's cart
         await cart.removeProducts(product)
