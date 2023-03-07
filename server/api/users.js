@@ -133,7 +133,7 @@ function authenticateToken(req, res, next) {
   });
 }
 
-// Get a user's profile
+// Get a user's profileyf
 router.get('/profile', authenticateToken, async (req, res, next) => {
   try {
     const userId = req.user.id;
